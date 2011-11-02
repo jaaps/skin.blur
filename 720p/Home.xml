@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <window id="0">
-	<defaultcontrol always="true">200</defaultcontrol>
+	<defaultcontrol always="true">100</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<include>Background_Home</include>
@@ -16,6 +16,10 @@
 			<posx>820</posx>
 			<posy>100</posy>
 			<texture>divider.png</texture>
+		</control>
+		<control type="button" id="100">
+			<visible allowhiddenfocus="true">false</visible>
+			<onfocus>SetFocus(200,0)</onfocus>
 		</control>
 		<control type="group">
 			<visible>Skin.HasSetting(ShowPlexLogo)</visible>
@@ -59,6 +63,18 @@
 					<font>HomeMenuItemNoFocus</font>
 					<scroll>false</scroll>
 					<align>right</align>
+					<visible>![[StringCompare(ListItem.Label,Media) + Control.HasFocus(300)] | [StringCompare(ListItem.Label,Channels) + Control.HasFocus(400)] | [StringCompare(ListItem.Label,Settings) + Control.HasFocus(500)] | [StringCompare(ListItem.Label,Exit) + Control.HasFocus(600)]]</visible>
+				</control>
+				<control type="label">
+					<posx>300</posx>
+					<posy>48</posy>
+					<width>300</width>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<textcolor>White</textcolor>
+					<scroll>false</scroll>
+					<align>right</align>
+					<font>HomeMenuItem</font>
+					<visible>[StringCompare(ListItem.Label,Media) + Control.HasFocus(300)] | [StringCompare(ListItem.Label,Channels) + Control.HasFocus(400)] | [StringCompare(ListItem.Label,Settings) + Control.HasFocus(500)] | [StringCompare(ListItem.Label,Exit) + Control.HasFocus(600)]</visible>
 				</control>
 			</itemlayout>
 			<focusedlayout height="90">
@@ -107,7 +123,7 @@
 				<height>300</height>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<onleft>200</onleft>
+				<onleft>SetFocus(200,0)</onleft>
 				<visible allowhiddenfocus="false">Container(200).HasFocus(1) | Control.HasFocus(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
@@ -228,7 +244,7 @@
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
 				<onleft>200</onleft>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(2) | Control.HasFocus(400)</visible>
+				<visible allowhiddenfocus="false">[Container(200).HasFocus(2) | Control.HasFocus(400)] + !Control.IsVisible(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">
@@ -270,23 +286,17 @@
 						<onclick>xbmc.activatewindow(6)</onclick>
 					</item>
 					<item id="2">
-						<description>Music Channels</description>
-						<label>Music Channels</label>
+						<description>Audio Channels</description>
+						<label>Audio Channels</label>
 						<onclick>xbmc.activatewindow(5)</onclick>
 					</item>
 					<item id="3">
-						<description>Photo Channels</description>
-						<label>Photo Channels</label>
+						<description>Picture Channels</description>
+						<label>Picture Channels</label>
 						<onclick>xbmc.activatewindow(2)</onclick>
 					</item>
 					<item id="4">
-						<description>Other Channels</description>
-						<label>Other Channels</label>
-						<onclick>xbmc.activatewindow(1)</onclick>
-						<visible>Skin.HasSetting(ShowOtherApps)</visible>
-					</item>
-					<item id="6">
-						<description>Plex Online Menu</description>
+						<description>Plex Connect</description>
 						<label>Channel Directory</label>
 						<onclick>Plex.ActivateWindow(1,plex://localhost/system/plexonline,return)</onclick>
 					</item>
@@ -301,7 +311,7 @@
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
 				<onleft>200</onleft>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(3) | Control.HasFocus(500)</visible>
+				<visible allowhiddenfocus="false">[Container(200).HasFocus(3) | Control.HasFocus(500)] + !Control.IsVisible(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">
@@ -389,7 +399,7 @@
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
 				<onleft>200</onleft>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(4) | Control.HasFocus(600)</visible>
+				<visible allowhiddenfocus="false">[Container(200).HasFocus(4) | Control.HasFocus(600)] + !Control.IsVisible(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">
