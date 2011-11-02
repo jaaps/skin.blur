@@ -93,23 +93,23 @@
 				<item id="1">
 					<description>Media</description>
 					<label>Media</label>
-					<onclick>SetFocus(299)</onclick>
+					<onclick>SetFocus(300,0)</onclick>
 					<thumb>icons/icon_pictures.png</thumb>
 				</item>
 				<item id="2">
 					<description>Channels</description>
 					<label>Channels</label>
-					<onclick>SetFocus(299)</onclick>
+					<onclick>SetFocus(400,0)</onclick>
 				</item>
 				<item id="3">
 					<description>Settings</description>
 					<label>$LOCALIZE[5]</label>
-					<onclick>SetFocus(299)</onclick>
+					<onclick>SetFocus(500,0)</onclick>
 				</item>
 				<item id="4">
 					<description>Exit</description>
 					<label>Exit</label>
-					<onclick>SetFocus(299)</onclick>
+					<onclick>SetFocus(600,0)</onclick>
 				</item>
 			</content>
 		</control>
@@ -123,6 +123,7 @@
 				<height>300</height>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
+				<onleft>SetFocus(300,0)</onleft>
 				<onleft>SetFocus(200,0)</onleft>
 				<visible allowhiddenfocus="false">Container(200).HasFocus(1) | Control.HasFocus(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
@@ -243,7 +244,8 @@
 				<height>300</height>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<onleft>200</onleft>
+				<onleft>SetFocus(400,0)</onleft>
+				<onleft>SetFocus(200,1)</onleft>
 				<visible allowhiddenfocus="false">[Container(200).HasFocus(2) | Control.HasFocus(400)] + !Control.IsVisible(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
@@ -316,7 +318,8 @@
 				<height>400</height>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<onleft>200</onleft>
+				<onleft>SetFocus(400,0)</onleft>
+				<onleft>SetFocus(200,2)</onleft>
 				<visible allowhiddenfocus="false">[Container(200).HasFocus(3) | Control.HasFocus(500)] + !Control.IsVisible(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
@@ -404,7 +407,10 @@
 				<height>300</height>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<onleft>200</onleft>
+				<onleft>SetFocus(600,0)</onleft>
+
+				<onleft>SetFocus(200,3)</onleft>
+
 				<visible allowhiddenfocus="false">[Container(200).HasFocus(4) | Control.HasFocus(600)] + !Control.IsVisible(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
