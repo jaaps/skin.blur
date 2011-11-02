@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<window id="12">
+	<defaultcontrol always="true">3</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>Background</include>
+		<include>Header</include>
+		<control type="image">
+			<height>680</height>
+			<posx>250</posx>
+			<posy>60</posy>
+			<texture>divider.png</texture>
+		</control>
+		<control type="grouplist" id="3">
+			<description>Button Area</description>
+			<posx>30</posx>
+			<posy>100</posy>
+			<width>200</width>
+			<height>480</height>
+			<itemgap>2</itemgap>
+			<onleft>5</onleft>
+			<onright>5</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+			<orientation>vertical</orientation>
+		</control>
+		<control type="grouplist" id="5">
+			<description>Control Area</description>
+			<posx>290</posx>
+			<posy>100</posy>
+			<width>500</width>
+			<height>480</height>
+			<itemgap>9</itemgap>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+			<orientation>vertical</orientation>
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<textoffsetx>20</textoffsetx>
+			<align>left</align>
+			<texturefocus>button.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<height>50</height>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default Radio Button</description>
+			<textoffsetx>20</textoffsetx>
+			<align>left</align>
+			<texturefocus>button.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<height>50</height>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default Spin Control</description>
+			<textoffsetx>20</textoffsetx>
+			<align>left</align>
+			<texturefocus>button.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<height>50</height>
+		</control>
+		<control type="button" id="10">
+			<description>Default Category Button</description>
+		</control>
+	</controls>
+</window>

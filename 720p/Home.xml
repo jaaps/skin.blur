@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<window id="0">
+	<defaultcontrol always="true">299</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>Background_Home</include>
+		<include>Header</include>
+		<control type="image">
+			<height>600</height>
+			<posx>560</posx>
+			<posy>100</posy>
+			<texture>divider.png</texture>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(ShowPlexLogo)</visible>
+			<control type="image">
+				<texture>plexicon.png</texture>
+				<width>85</width>
+				<height>85</height>
+				<posx>460</posx>
+				<posy>80</posy>
+			</control>
+			<control type="label">
+				<width>300</width>
+				<height>85</height>
+				<aligny>center</aligny>
+				<label>PLEX</label>
+				<textcolor>White</textcolor>
+				<scroll>false</scroll>
+				<font>HomeMenuItem</font>
+				<posx>590</posx>
+				<posy>82</posy>
+			</control>
+		</control>
+		<control type="list" id="200">
+			<description>Home Fixedlist</description>
+			<posx>130</posx>
+			<posy>170</posy>
+			<width>700</width>
+			<height>720</height>
+			<visible>-</visible>
+			<onright>299</onright>
+			<focusposition>2</focusposition>
+			<scrolltime>200</scrolltime>
+			<animation effect="fade" start="100" end="30" time="300" condition="ControlGroup(299).HasFocus">Conditional</animation>
+			<itemlayout height="90">
+				<control type="label">
+					<posx>400</posx>
+					<posy>48</posy>
+					<width>400</width>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<textcolor>WhiteTrans</textcolor>
+					<font>HomeMenuItemNoFocus</font>
+					<scroll>false</scroll>
+					<align>right</align>
+				</control>
+			</itemlayout>
+			<focusedlayout height="90">
+				<control type="label">
+					<posx>400</posx>
+					<posy>48</posy>
+					<width>400</width>
+					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+					<textcolor>White</textcolor>
+					<scroll>false</scroll>
+					<align>right</align>
+					<font>HomeMenuItem</font>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<description>My Media</description>
+					<label>My Media</label>
+					<onclick>SetFocus(299)</onclick>
+					<thumb>icons/icon_pictures.png</thumb>
+				</item>
+				<item id="2">
+					<description>Apps</description>
+					<label>Apps</label>
+					<onclick>SetFocus(299)</onclick>
+				</item>
+				<item id="3">
+					<description>Settings</description>
+					<label>$LOCALIZE[5]</label>
+					<onclick>SetFocus(299)</onclick>
+				</item>
+				<item id="4">
+					<description>Exit</description>
+					<label>Exit</label>
+					<onclick>SetFocus(299)</onclick>
+				</item>
+			</content>
+		</control>
+		<control type="group" id="299">
+			<onup>Setfocus(299)</onup>
+			<ondown>Setfocus(299)</ondown>
+			<onleft>Setfocus(299)</onleft>
+			<onright>Setfocus(299)</onright>
+			<onfocus>Setfocus(299)</onfocus>
+			<animation effect="fade" start="30" end="100" time="300" condition="ControlGroup(299).HasFocus">Conditional</animation>
+			<control type="list" id="300">
+				<description>Home Fixedlist</description>
+				<posx>590</posx>
+				<posy>210</posy>
+				<width>700</width>
+				<height>300</height>
+				<onup>Setfocus(300)</onup>
+				<ondown>Setfocus(300)</ondown>
+				<onleft>Setfocus(200)</onleft>
+				<onright>Setfocus(300)</onright>
+				<onfocus>Setfocus(300)</onfocus>
+				<focusposition>1</focusposition>
+				<scrolltime>200</scrolltime>
+				<onfocus>SetFocus(200,1)</onfocus>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(1) | Container(300).HasFocus</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<itemlayout height="50">
+					<control type="label">
+						<posy>0</posy>
+						<posx>20</posx>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>WhiteTrans</textcolor>
+						<scroll>false</scroll>
+						<font>list1</font>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50">
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>400</width>
+						<height>50</height>
+						<texture>button2.png</texture>
+						<aspectratio>keep</aspectratio>
+						<visible>Container(300).HasFocus</visible>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<textcolor>White</textcolor>
+						<info>ListItem.Label</info>
+						<font>list1</font>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Favorites Menu</description>
+						<label>Favorites</label>
+						<onclick>Plex.ActivateWindow(Favourites)</onclick>
+						<visible>Skin.HasSetting(ShowFavorites)</visible>
+					</item>
+					<item id="2">
+						<description>DVD</description>
+						<label>DVD</label>
+						<onclick>XBMC.PlayDVD</onclick>
+						<visible>System.HasMediadvd + Skin.HasSetting(ShowDVD)</visible>
+					</item>
+					<item id="3">
+						<description>Search Menu</description>
+						<label> Search </label>
+						<onclick>Plex.ActivateWindow(10051)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="400">
+				<description>Home Fixedlist</description>
+				<posx>590</posx>
+				<posy>210</posy>
+				<width>700</width>
+				<height>300</height>
+				<onup>Setfocus(400)</onup>
+				<ondown>Setfocus(400)</ondown>
+				<onleft>Setfocus(200)</onleft>
+				<onright>Setfocus(400)</onright>
+				<onfocus>Setfocus(400)</onfocus>
+				<focusposition>1</focusposition>
+				<scrolltime>200</scrolltime>
+				<onfocus>SetFocus(200)</onfocus>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(2) | Container(400).HasFocus</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<itemlayout height="50">
+					<control type="label">
+						<posy>0</posy>
+						<posx>20</posx>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>WhiteTrans</textcolor>
+						<scroll>false</scroll>
+						<font>list1</font>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50">
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>400</width>
+						<height>50</height>
+						<texture>button2.png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<textcolor>White</textcolor>
+						<info>ListItem.Label</info>
+						<font>list1</font>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Video Apps</description>
+						<label>Video Apps</label>
+						<onclick>xbmc.activatewindow(6)</onclick>
+					</item>
+					<item id="2">
+						<description>Music Apps</description>
+						<label>Music Apps</label>
+						<onclick>xbmc.activatewindow(5)</onclick>
+					</item>
+					<item id="3">
+						<description>Photo Apps</description>
+						<label>Photo Apps</label>
+						<onclick>xbmc.activatewindow(2)</onclick>
+					</item>
+					<item id="4">
+						<description>Other Apps</description>
+						<label>Other Apps</label>
+						<onclick>xbmc.activatewindow(1)</onclick>
+						<visible>Skin.HasSetting(ShowOtherApps)</visible>
+					</item>
+					<item id="5">
+						<description>Weather</description>
+						<label>Weather Forecast</label>
+						<onclick>xbmc.activatewindow(2600)</onclick>
+						<visible>Skin.HasSetting(ShowMyWeather)</visible>
+					</item>
+					<item id="6">
+						<description>Plex Online Menu</description>
+						<label>App Store</label>
+						<onclick>Plex.ActivateWindow(1,plex://localhost/system/plexonline,return)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="500">
+				<description>Home Fixedlist</description>
+				<posx>590</posx>
+				<posy>210</posy>
+				<width>700</width>
+				<height>400</height>
+				<onup>Setfocus(500)</onup>
+				<ondown>Setfocus(500)</ondown>
+				<onleft>Setfocus(200)</onleft>
+				<onright>Setfocus(500)</onright>
+				<onfocus>Setfocus(500)</onfocus>
+				<onleft>200</onleft>
+				<onright>200</onright>
+				<focusposition>1</focusposition>
+				<scrolltime>200</scrolltime>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(3) | Container(500).HasFocus</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<itemlayout height="50">
+					<control type="label">
+						<posy>0</posy>
+						<posx>20</posx>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>WhiteTrans</textcolor>
+						<scroll>false</scroll>
+						<font>list1</font>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50">
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>400</width>
+						<height>50</height>
+						<texture>button2.png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<textcolor>White</textcolor>
+						<info>ListItem.Label</info>
+						<font>list1</font>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="2">
+						<description>Videos</description>
+						<label>$LOCALIZE[3]</label>
+						<onclick>activatewindow(MyVideosSettings)</onclick>
+					</item>
+					<item id="3">
+						<description>Music</description>
+						<label>$LOCALIZE[2]</label>
+						<onclick>activatewindow(MyMusicSettings)</onclick>
+					</item>
+					<item id="4">
+						<description>Pictures</description>
+						<label>$LOCALIZE[1]</label>
+						<onclick>activatewindow(MyPicturesSettings)</onclick>
+					</item>
+					<item id="6">
+						<description>Weather</description>
+						<label>$LOCALIZE[8]</label>
+						<onclick>activatewindow(MyWeatherSettings)</onclick>
+					</item>
+					<!--					<item id="7">
+						<description>Network</description>
+						<label>$LOCALIZE[705]</label>
+						<onclick>activatewindow(NetworkSettings)</onclick>
+					</item>
+					-->
+					<item id="8">
+						<description>System</description>
+						<label>$LOCALIZE[13000]</label>
+						<onclick>activatewindow(SystemSettings)</onclick>
+					</item>
+					<item id="9">
+						<description>Appearance</description>
+						<label>$LOCALIZE[480]</label>
+						<onclick>activatewindow(AppearanceSettings)</onclick>
+					</item>
+					<item id="13">
+						<description>Custom Settings</description>
+						<label>Blur</label>
+						<onclick>activatewindow(56)</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="list" id="600">
+				<description>Home Fixedlist</description>
+				<posx>590</posx>
+				<posy>210</posy>
+				<width>700</width>
+				<height>300</height>
+				<onup>Setfocus(600)</onup>
+				<ondown>Setfocus(600)</ondown>
+				<onleft>Setfocus(200)</onleft>
+				<onright>Setfocus(600)</onright>
+				<onfocus>Setfocus(600)</onfocus>
+				<onleft>200</onleft>
+				<onright>200</onright>
+				<focusposition>1</focusposition>
+				<scrolltime>200</scrolltime>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(4) | Container(600).HasFocus</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<itemlayout height="50">
+					<control type="label">
+						<posy>0</posy>
+						<posx>20</posx>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>WhiteTrans</textcolor>
+						<scroll>false</scroll>
+						<font>list1</font>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50">
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>400</width>
+						<height>50</height>
+						<texture>button2.png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<posx>20</posx>
+						<posy>0</posy>
+						<width>690</width>
+						<height>50</height>
+						<aligny>center</aligny>
+						<textcolor>White</textcolor>
+						<info>ListItem.Label</info>
+						<font>list1</font>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Quit Button</description>
+						<label>Exit Plex</label>
+						<onclick>Plex.Shutdown()</onclick>
+					</item>
+					<item id="2">
+						<description>Sleep Button</description>
+						<label>Sleep</label>
+						<onclick>XBMC.SleepSystem()</onclick>
+					</item>
+					<item id="3">
+						<description>Shut Down Button</description>
+						<label>Shutdown</label>
+						<onclick>XBMC.ShutDownSystem()</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

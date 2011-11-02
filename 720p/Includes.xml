@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+<includes>
+	<include file="Defaults.xml"/>
+	<include file="CommonViews.xml"/>
+	<include file="NowPlayingIncludes.xml"/>
+	<include file="IncludesDialogs.xml"/>
+	<include name="DialogBack">
+		<control type="image">
+			<width>520</width>
+			<height>424</height>
+			<texture>White.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</include>
+	<include name="DialogID">
+		<posx>10</posx>
+		<posy>10</posy>
+		<font>Small</font>
+		<textcolor>Gray</textcolor>
+		<align>left</align>
+	</include>
+	<include name="SideMenuViews">
+		<control type="button" id="9001">
+			<description>List view button</description>
+			<label>List</label>
+			<onclick>Container.SetViewMode(50)</onclick>
+		</control>
+		<control type="button" id="9002">
+			<description>Info List view button</description>
+			<visible>!Container.Content(secondary)</visible>
+			<label>Info List</label>
+			<onclick>Container.SetViewMode(51)</onclick>
+		</control>
+		<control type="button" id="9003">
+			<description>Horizon view button</description>
+			<visible>!Container.Content(secondary) + !Container.Content(episodes) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + !Window.IsVisible(28) + !Window.IsVisible(500)</visible>
+			<label>Horizon</label>
+			<onclick>Container.SetViewMode(56)</onclick>
+		</control>
+		<control type="button" id="9004">
+			<description>Poster view button</description>
+			<visible>!Container.Content(episodes) + !Container.Content(Pictures) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(secondary) + !Window.IsVisible(28) + !Window.IsVisible(500)</visible>
+			<label>Panel</label>
+			<onclick>Container.SetViewMode(55)</onclick>
+		</control>
+		<control type="button" id="9005">
+			<description>Poster view button</description>
+			<visible>Container.Content(episodes)</visible>
+			<label>Episode</label>
+			<onclick>Container.SetViewMode(59)</onclick>
+		</control>
+	</include>
+	<include name="Custom_Background">
+		<texture>$INFO[Skin.String(Custom_Background)]</texture>
+	</include>
+	<include name="Background1">
+		<texture>backgrounds/DewDrop.png</texture>
+	</include>
+	<include name="Background2">
+		<texture>backgrounds/Aurora.png</texture>
+	</include>
+	<include name="Background3">
+		<texture>backgrounds/CalmWater.png</texture>
+	</include>
+	<include name="Background4">
+		<texture>backgrounds/DarkNight.png</texture>
+	</include>
+	<include name="Bokeh1">
+		<animation effect="zoom" start="100" end="110" center="auto" delay="4000" time="18000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="slide" start="-5,-5" end="10,10" delay="4000" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="rotate" center="360,640" start="-1" end="1" delay="4000" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<texture>backgrounds/Bokeh1.png</texture>
+	</include>
+	<include name="Bokeh2">
+		<animation effect="zoom" start="100" end="110" center="auto" delay="5000" time="18000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="slide" start="-5,-5" end="10,10" delay="5000" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="rotate" center="360,640" start="-1" end="1" delay="5400" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<texture>backgrounds/Bokeh2.png</texture>
+	</include>
+	<include name="Bokeh2">
+		<texture>backgrounds/Bokeh3.png</texture>
+	</include>
+	<include name="Custom_BackgroundFlipped">
+		<texture flipx="true">$INFO[Skin.String(Custom_Background)]</texture>
+	</include>
+	<include name="Background1Flipped">
+		<texture flipx="true">backgrounds/DewDrop.png</texture>
+	</include>
+	<include name="Background2Flipped">
+		<texture flipx="true">backgrounds/Aurora.png</texture>
+	</include>
+	<include name="Background3Flipped">
+		<texture flipx="true">backgrounds/CalmWater.png</texture>
+	</include>
+	<include name="Background4Flipped">
+		<texture flipx="true">backgrounds/DarkNight.png</texture>
+	</include>
+	<include name="Bokeh1Flipped">
+		<animation effect="zoom" start="100" end="110" center="auto" delay="4000" time="18000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="slide" start="-5,-5" end="10,10" delay="4000" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="rotate" center="360,640" start="-1" end="1" delay="4000" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<texture flipx="true">backgrounds/Bokeh1.png</texture>
+	</include>
+	<include name="Bokeh2Flipped">
+		<animation effect="zoom" start="100" end="110" center="auto" delay="4000" time="18000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="slide" start="-5,-5" end="10,10" delay="4000" time="10000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<animation effect="rotate" center="360,640" start="-1" end="1" delay="4000" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(RotatingBokeh)">conditional</animation>
+		<texture flipx="true">backgrounds/Bokeh2.png</texture>
+	</include>
+	<include name="Bokeh2Flipped">
+		<texture flipx="true">backgrounds/Bokeh3.png</texture>
+	</include>
+	<include name="Background">
+		<control type="group">
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="Skin.String(Custom_Background)">Custom_Background</include>
+				<include condition="!Skin.String(Custom_Background) + !Skin.HasSetting(Background1)">Background1</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background2)">Background2</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background3)">Background3</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background4)">Background4</include>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="largeimage">
+				<width>1280</width>
+				<height>720</height>
+				<texture background="true">$INFO[listitem.property(fanart_image)]</texture>
+				<aspectratio>scale</aspectratio>
+				<fadetime>500</fadetime>
+				<animation effect="fade" start="0" end="90" time="500">Visible</animation>
+				<visible>Skin.HasSetting(Fanart) + !IsEmpty(listitem.property(fanart_image))</visible>
+			</control>
+			<control type="image">
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>ddffffff</colordiffuse>
+				<include condition="Skin.String(Custom_Background)">Custom_Background</include>
+				<include condition="!Skin.String(Custom_Background) + !Skin.HasSetting(Background1)">Background1</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background2)">Background2</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background3)">Background3</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background4)">Background4</include>
+				<visible>Skin.HasSetting(Fanart)</visible>
+			</control>
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="Skin.HasSetting(Bokeh1)">Bokeh1</include>
+				<fadetime>0</fadetime>
+			</control>
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="Skin.HasSetting(Bokeh2)">Bokeh2</include>
+				<fadetime>0</fadetime>
+			</control>
+		</control>
+	</include>
+	<include name="Background_Home">
+		<control type="group">
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="Skin.String(Custom_Background)">Custom_Background</include>
+				<include condition="!Skin.String(Custom_Background) + !Skin.HasSetting(Background1)">Background1</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background2)">Background2</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background3)">Background3</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background4)">Background4</include>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="multiimage" id="1">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>scale</aspectratio>
+				<imagepath>../../../userdata/Thumbnails/PlexMediaServer/Fanart/</imagepath>
+				<timeperimage>8000</timeperimage>
+				<fadetime>1000</fadetime>
+				<randomize>true</randomize>
+				<loop>yes</loop>
+				<visible>Skin.HasSetting(FanartSlideShow)</visible>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="800" delay="0"/>
+				</animation>
+			</control>
+			<control type="image">
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>ddffffff</colordiffuse>
+				<include condition="Skin.String(Custom_Background)">Custom_Background</include>
+				<include condition="!Skin.String(Custom_Background) + !Skin.HasSetting(Background1)">Background1</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background2)">Background2</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background3)">Background3</include>
+				<include condition="!Skin.String(Custom_Background) + Skin.HasSetting(Background4)">Background4</include>
+				<visible>Skin.HasSetting(FanartSlideShow)</visible>
+			</control>
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="Skin.HasSetting(Bokeh1)">Bokeh1</include>
+				<fadetime>0</fadetime>
+			</control>
+			<control type="image">
+				<description>Background Image</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>stretch</aspectratio>
+				<include condition="Skin.HasSetting(Bokeh2)">Bokeh2</include>
+				<fadetime>0</fadetime>
+			</control>
+		</control>
+	</include>
+	<include name="BackgroundReset">
+		<onclick>Skin.Reset(Custom_Background)</onclick>
+		<onclick>Skin.Reset(Background1)</onclick>
+		<onclick>Skin.Reset(Background2)</onclick>
+		<onclick>Skin.Reset(Background3)</onclick>
+		<onclick>Skin.Reset(Background4)</onclick>
+	</include>
+	<include name="videoPageLabel">
+		<posx>30</posx>
+		<posy>15</posy>
+		<width>1000</width>
+		<height>56</height>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>title1</font>
+		<textcolor>White</textcolor>
+	</include>
+	<include name="Header">
+		<control type="group">
+			<visible>!Container.Scrolling</visible>
+			<control type="label">
+				<description>First title</description>
+				<visible>!IsEmpty(Container.FirstTitle)</visible>
+				<label>[UPPERCASE]$INFO[Container.FirstTitle][/UPPERCASE]</label>
+				<posx>30</posx>
+				<posy>15</posy>
+				<width>1000</width>
+				<height>56</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>title1</font>
+				<textcolor>White</textcolor>
+			</control>
+			<control type="label">
+				<description>First title</description>
+				<visible>[Window.IsVisible(settings) | Window.IsVisible(VideosSettings) | Window.IsVisible(MusicSettings) | Window.IsVisible(PicturesSettings) | Window.IsVisible(WeatherSettings) | Window.IsVisible(SystemSettings) | Window.IsVisible(NetworkSettings) | Window.IsVisible(AppearanceSettings)]</visible>
+				<label>[UPPERCASE]$INFO[System.CurrentWindow][/UPPERCASE]</label>
+				<posx>30</posx>
+				<posy>15</posy>
+				<width>1000</width>
+				<height>56</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>title1</font>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container.Scrolling</visible>
+			<control type="label">
+				<label>$INFO[ListItem.SortLetter]</label>
+				<posx>30</posx>
+				<posy>15</posy>
+				<width>1000</width>
+				<height>56</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>title1</font>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+		<control type="label">
+			<description>Second title</description>
+			<visible>!IsEmpty(Container.SecondTitle)</visible>
+			<label>[UPPERCASE]$INFO[Container.SecondTitle][/UPPERCASE] [COLOR=WhiteTrans]($INFO[Container.NumItems] items)[/COLOR]</label>
+			<posx>30</posx>
+			<posy>45</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>info1</font>
+			<textcolor>White</textcolor>
+		</control>
+		<control type="label">
+			<description>Second title</description>
+			<visible>IsEmpty(Container.SecondTitle) + [Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(56)] + !IsEmpty(Container.FirstTitle)</visible>
+			<label>[COLOR=WhiteTrans]($INFO[Container.NumItems] items)[/COLOR]</label>
+			<posx>30</posx>
+			<posy>45</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>info1</font>
+			<textcolor>White</textcolor>
+		</control>
+		<control type="group">
+			<visible>System.hasnetwork + !Skin.HasSetting(HideWeather)</visible>
+			<control type="label">
+				<posx>1230</posx>
+				<posy>15</posy>
+				<visible>true + System.timeisampm</visible>
+				<width>500</width>
+				<height>56</height>
+				<label>[COLOR=WhiteTrans]$INFO[Weather.Conditions], $INFO[Weather.Temperature] [/COLOR]   $INFO[System.TimeNoAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+			<control type="label">
+				<visible>true + !System.timeisampm</visible>
+				<posx>1230</posx>
+				<posy>15</posy>
+				<width>500</width>
+				<height>56</height>
+				<label>[COLOR=WhiteTrans]$INFO[Weather.Conditions], $INFO[Weather.Temperature] [/COLOR]   $INFO[System.TimeAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!System.hasnetwork | Skin.HasSetting(HideWeather)</visible>
+			<control type="label">
+				<posx>1230</posx>
+				<posy>15</posy>
+				<visible>true + System.timeisampm</visible>
+				<width>500</width>
+				<height>56</height>
+				<label>$INFO[System.TimeNoAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+			<control type="label">
+				<visible>true + !System.timeisampm</visible>
+				<posx>1230</posx>
+				<posy>15</posy>
+				<width>500</width>
+				<height>56</height>
+				<label>$INFO[System.TimeAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+	</include>
+	<include name="HeaderVideos">
+		<control type="label">
+			<description>First title</description>
+			<visible>IsEmpty(Container.FirstTitle) + !Container.Scrolling</visible>
+			<label>[UPPERCASE]$LOCALIZE[3][/UPPERCASE]</label>
+			<posx>30</posx>
+			<posy>15</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>title1</font>
+			<textcolor>White</textcolor>
+		</control>
+		<control type="label">
+			<description>Second title</description>
+			<visible>IsEmpty(Container.SecondTitle) + [Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(56)] + IsEmpty(Container.FirstTitle)</visible>
+			<label>[COLOR=WhiteTrans]($INFO[Container.NumItems] items)[/COLOR]</label>
+			<posx>30</posx>
+			<posy>45</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>info1</font>
+			<textcolor>White</textcolor>
+		</control>
+	</include>
+	<include name="HeaderPlaylist">
+		<control type="label">
+			<description>First title</description>
+			<visible>IsEmpty(Container.FirstTitle) + !Container.Scrolling</visible>
+			<label>[UPPERCASE]Playlist[/UPPERCASE]</label>
+			<posx>30</posx>
+			<posy>15</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>title1</font>
+			<textcolor>White</textcolor>
+		</control>
+		<control type="label">
+			<description>Second title</description>
+			<visible>IsEmpty(Container.SecondTitle) + [Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(55) | Control.IsVisible(56)] + IsEmpty(Container.FirstTitle)</visible>
+			<label>[COLOR=WhiteTrans]($INFO[Container.NumItems] items)[/COLOR]</label>
+			<posx>30</posx>
+			<posy>45</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>info1</font>
+			<textcolor>White</textcolor>
+		</control>
+	</include>
+	<include name="HeaderHome">
+		<control type="label">
+			<description>First title</description>
+			<label>[UPPERCASE]Welcome to Plex[/UPPERCASE]</label>
+			<posx>30</posx>
+			<posy>15</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>title1</font>
+			<textcolor>White</textcolor>
+		</control>
+	</include>
+	<include name="SideMenuBackground">
+		<control type="image">
+			<animation effect="slide" start="0" end="-250" time="400" tween="cubic" easing="inout" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
+			<height>680</height>
+			<posx>230</posx>
+			<posy>30</posy>
+			<texture>divider.png</texture>
+		</control>
+	</include>
+	<include name="WindowID">
+		<posx>10</posx>
+		<posy>10</posy>
+		<font>Small</font>
+		<textcolor>Gray</textcolor>
+		<align>left</align>
+	</include>
+	<include name="HeaderWeather">
+		<control type="label">
+			<label>Weather</label>
+			<posx>30</posx>
+			<posy>15</posy>
+			<width>1000</width>
+			<height>56</height>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>title1</font>
+			<textcolor>White</textcolor>
+		</control>
+		<control type="group">
+			<visible>System.hasnetwork + !Skin.HasSetting(HideWeather)</visible>
+			<control type="label">
+				<posx>1230</posx>
+				<posy>15</posy>
+				<visible>true + System.timeisampm</visible>
+				<width>500</width>
+				<height>56</height>
+				<label>$INFO[System.TimeNoAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+			<control type="label">
+				<visible>true + !System.timeisampm</visible>
+				<posx>1230</posx>
+				<posy>15</posy>
+				<width>500</width>
+				<height>56</height>
+				<label>$INFO[System.TimeAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!System.hasnetwork | Skin.HasSetting(HideWeather)</visible>
+			<control type="label">
+				<posx>1230</posx>
+				<posy>15</posy>
+				<visible>true + System.timeisampm</visible>
+				<width>500</width>
+				<height>56</height>
+				<label>$INFO[System.TimeNoAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+			<control type="label">
+				<visible>true + !System.timeisampm</visible>
+				<posx>1230</posx>
+				<posy>15</posy>
+				<width>500</width>
+				<height>56</height>
+				<label>$INFO[System.TimeAmPm]</label>
+				<font>info1</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+	</include>
+	<include name="Search_Label">
+		<posx>15</posx>
+		<textcolor>White</textcolor>
+		<scroll>false</scroll>
+		<font>list1</font>
+		<width>278</width>
+		<height>30</height>
+	</include>
+	<include name="Search_Label_Unfocused">
+		<posx>15</posx>
+		<textcolor>WhiteTrans</textcolor>
+		<scroll>false</scroll>
+		<font>list1</font>
+		<width>278</width>
+		<height>30</height>
+	</include>
+	<include name="Search_Result">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>880</width>
+		<itemlayout width="140" height="200">
+			<control type="image">
+				<posx>15</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>140</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="bottom">keep</aspectratio>
+			</control>
+			<control type="label">
+				<visible>ListItem.Type(episode)</visible>
+				<posx>81</posx>
+				<posy>160</posy>
+				<width>130</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.tvshowtitle]</label>
+				<font>MediumSmallTitleFont</font>
+				<textcolor>FF999999</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>ListItem.Type(album) | ListItem.Type(track)</visible>
+				<posx>81</posx>
+				<posy>160</posy>
+				<width>130</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.artist]</label>
+				<font>MediumSmallTitleFont</font>
+				<textcolor>FF999999</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="label">
+				<posx>81</posx>
+				<posy>180</posy>
+				<width>130</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.Title]</label>
+				<font>MediumSmallTitleFont</font>
+				<textcolor>FF999999</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+		</itemlayout>
+		<focusedlayout width="140" height="200">
+			<control type="image">
+				<posx>15</posx>
+				<posy>10</posy>
+				<width>128</width>
+				<height>140</height>
+				<info>ListItem.Thumb</info>
+				<aspectratio aligny="bottom">keep</aspectratio>
+			</control>
+			<control type="label">
+				<visible>ListItem.Type(episode)</visible>
+				<posx>81</posx>
+				<posy>160</posy>
+				<width>130</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.tvshowtitle]</label>
+				<font>MediumSmallTitleFont</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>ListItem.Type(album) | ListItem.Type(track)</visible>
+				<posx>81</posx>
+				<posy>160</posy>
+				<width>130</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.artist]</label>
+				<font>MediumSmallTitleFont</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="label">
+				<posx>81</posx>
+				<posy>180</posy>
+				<width>130</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<label>$INFO[ListItem.Title]</label>
+				<font>MediumSmallTitleFont</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Search_Keyboard_Button">
+		<font>info1</font>
+		<texturenofocus border="8,3,8,3">-</texturenofocus>
+		<texturefocus border="8,3,8,3">dialogs/buttonKB-focus.png</texturefocus>
+		<textcolor>WhiteTrans</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<width>48</width>
+		<height>48</height>
+		<align>center</align>
+		<textoffsety>10</textoffsety>
+	</include>
+	<include name="Search_Keyboard_ToggleButton">
+		<width>36</width>
+		<height>36</height>
+		<font>LargeDefaultFont</font>
+		<textcolor>HomeMain</textcolor>
+		<focusedcolor>Focused</focusedcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+		<texturenofocus border="18" diffuse="grey.png">button_keyboard.png</texturenofocus>
+		<texturefocus border="18" diffuse="masks/10b9f2.png">button_keyboard.png</texturefocus>
+		<textureclick border="18">-</textureclick>
+	</include>
+	<include name="Search_Keyboard_Big_Button">
+		<width>120</width>
+		<height>42</height>
+		<font>info1</font>
+		<align>center</align>
+		<aligny>-</aligny>
+		<textoffsety>6</textoffsety>
+		<texturenofocus border="20">dialogs/buttonD.png</texturenofocus>
+		<texturefocus border="20,16,20,16">dialogs/buttonD-focus.png</texturefocus>
+		<textcolor>WhiteTrans</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<pulseonselect>false</pulseonselect>
+	</include>
+</includes>
