@@ -557,52 +557,52 @@
 				<colordiffuse>WhiteTrans</colordiffuse>
 				<aspectratio aligny="center" align="left">keep</aspectratio>
 			</control>
-		<control type="textbox">
-			<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
-			<visible>!Container.OnNext + !Container.OnPrevious</visible>
-			<animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout" delay="50">Visible</animation>
-			<visible>Control.IsVisible(56)</visible>
-			<posx>560</posx>
-			<posy>450</posy>
-			<width>1080</width>
-			<height>89</height>
-			<font>info1</font>
-			<align>left</align>
-			<aligny>top</aligny>
-			<textcolor>White</textcolor>
-			<label>$INFO[ListItem.Plot]</label>
-			<wrapmultiline>true</wrapmultiline>
+			<control type="textbox">
+				<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout" delay="50">Visible</animation>
+				<visible>Control.IsVisible(56)</visible>
+				<posx>560</posx>
+				<posy>450</posy>
+				<width>1080</width>
+				<height>89</height>
+				<font>info1</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>White</textcolor>
+				<label>$INFO[ListItem.Plot]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<posx>102</posx>
+				<posy>0</posy>
+				<width>1080</width>
+				<height>34</height>
+				<font>info1</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>WhiteTrans</textcolor>
+				<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] </label>
+				<visible>!Skin.HasSetting(ShowMPAA) | IsEmpty(ListItem.MPAA)</visible>
+			</control>
+			<control type="label">
+				<posx>102</posx>
+				<posy>0</posy>
+				<width>1080</width>
+				<height>34</height>
+				<font>info1</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>WhiteTrans</textcolor>
+				<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] - $INFO[ListItem.MPAA]</label>
+				<visible>Skin.HasSetting(ShowMPAA) + !IsEmpty(ListItem.MPAA)</visible>
+			</control>
 		</control>
-		<control type="label">
-			<posx>102</posx>
-			<posy>0</posy>
-			<width>1080</width>
-			<height>34</height>
-			<font>info1</font>
-			<align>left</align>
-			<aligny>center</aligny>
-			<textcolor>WhiteTrans</textcolor>
-			<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] </label>
-			<visible>!Skin.HasSetting(ShowMPAA) | IsEmpty(ListItem.MPAA)</visible>
-		</control>
-		<control type="label">
-			<posx>102</posx>
-			<posy>0</posy>
-			<width>1080</width>
-			<height>34</height>
-			<font>info1</font>
-			<align>left</align>
-			<aligny>center</aligny>
-			<textcolor>WhiteTrans</textcolor>
-			<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] - $INFO[ListItem.MPAA]</label>
-			<visible>Skin.HasSetting(ShowMPAA) + !IsEmpty(ListItem.MPAA)</visible>
-		</control>
-	</control>
 		<!-- END: MOVIES -->
 	</include>
 	<include name="Horizon">
 		<control type="fixedlist" id="56">
-			<viewtype label="Slide">wrap</viewtype>
+			<viewtype label="PosterWrap">PosterWrap</viewtype>
 			<posx>-5</posx>
 			<posy>105</posy>
 			<width>1450</width>
@@ -659,7 +659,6 @@
 			<onup>51</onup>
 			<ondown>51</ondown>
 			<viewtype label="InfoList">InfoList</viewtype>
-			<visible>!Container.Content(secondary)</visible>
 			<scrolltime>200</scrolltime>
 			<itemlayout height="50">
 				<control type="group">
@@ -942,7 +941,7 @@
 			<onright>9000</onright>
 			<onup>50</onup>
 			<ondown>50</ondown>
-			<viewtype label="List">list</viewtype>
+			<viewtype label="List">List</viewtype>
 			<scrolltime>200</scrolltime>
 			<itemlayout height="50">
 				<control type="group">
@@ -1200,113 +1199,148 @@
 		</control>
 	</include>
 	<include name="Episodes">
-		<control type="wraplist" id="59">
-			<!--Fixed-->
-			<viewtype label="episode">episode</viewtype>
-			<posy>75</posy>
-			<width>1400</width>
-			<height>610</height>
-			<onleft>9000</onleft>
-			<onright>76</onright>
+		<control type="fixedlist" id="59">
+			<viewtype label="Episodes">list</viewtype>
+			<animation effect="slide" start="55,0" end="55,0" time="0" condition="Player.HasVideo">Conditional</animation>
+			<posx>180</posx>
+			<posy>110</posy>
+			<width>933</width>
+			<height>550</height>
+			<scrolltime>0</scrolltime>
+			<orientation>vertical</orientation>
 			<onup>51</onup>
 			<ondown>51</ondown>
-			<scrolltime>150</scrolltime>
-			<focusposition>1</focusposition>
-			<wraparound>true</wraparound>
+			<onleft>99123</onleft>
+			<onright>65</onright>
+			<focusposition>2</focusposition>
 			<movement>2</movement>
-			<pagecontrol>76</pagecontrol>
-			<orientation>vertical</orientation>
-			<visible>Container.Content(episodes)</visible>
-			<itemlayout width="625" height="147">
+			<pagecontrol>65</pagecontrol>
+			<itemlayout width="633" height="90">
 				<control type="image">
-					<posy>90</posy>
-					<posx>10</posx>
+					<posy>0</posy>
+					<posx>87</posx>
 					<width>24</width>
-					<height>24</height>
+					<height>90</height>
 					<texture>$INFO[ListItem.Overlay]</texture>
+					<aspectratio aligny="center">keep</aspectratio>
 					<colordiffuse>WhiteTrans</colordiffuse>
 				</control>
-				<control type="image">
-					<posx>55</posx>
-					<posy>33</posy>
-					<width>215</width>
-					<height>130</height>
-					<texture>$INFO[ListItem.Thumb]</texture>
-					<bordertexture border="20">-</bordertexture>
-					<bordersize>18</bordersize>
-					<aspectratio scalediffuse="false" align="center">scale</aspectratio>
-				</control>
-				<control type="label" id="1">
-					<posx>290</posx>
-					<posy>65</posy>
-					<width>770</width>
-					<label>[UPPERCASE]$INFO[ListItem.Episode]. $INFO[ListItem.Label][/UPPERCASE]</label>
+				<control type="label">
+					<posx>125</posx>
+					<posy>0</posy>
+					<width>633</width>
+					<height>60</height>
+					<aligny>center</aligny>
 					<font>title1</font>
 					<textcolor>White</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>IsEmpty(ListItem.Title)</visible>
 				</control>
-				<control type="label" id="1">
-					<posx>290</posx>
-					<posy>90</posy>
-					<width>975</width>
-					<label>$INFO[ListItem.Date]</label>
-					<font>list1</font>
+				<control type="label">
+					<posx>112</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>90</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Episode]</label>
+					<font>title1</font>
 					<textcolor>WhiteTrans</textcolor>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+				</control>
+				<control type="label">
+					<posx>150</posx>
+					<posy>8</posy>
+					<width>633</width>
+					<height>60</height>
+					<align>left</align>
+					<label>$INFO[ListItem.Title]</label>
+					<font>info1</font>
+					<textcolor>White</textcolor>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+				</control>
+				<control type="label">
+					<posx>150</posx>
+					<posy>31</posy>
+					<width>633</width>
+					<height>60</height>
+					<align>left</align>
+					<label>$LOCALIZE[20416]: $INFO[ListItem.Property(originallyAvailableAt)]</label>
+					<font>info1</font>
+					<textcolor>WhiteTrans</textcolor>
+					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout width="625" height="147">
+			<focusedlayout width="633" height="164">
 				<control type="image">
-					<posy>90</posy>
-					<posx>10</posx>
-					<width>24</width>
-					<height>24</height>
-					<texture>$INFO[ListItem.Overlay]</texture>
-					<colordiffuse>WhiteTrans</colordiffuse>
-				</control>
-				<control type="image">
-					<posx>55</posx>
-					<posy>33</posy>
-					<width>215</width>
-					<height>130</height>
+					<posx>-13</posx>
+					<posy>-13</posy>
+					<width>293</width>
+					<height>179</height>
+					<texture diffuse="episodematte.png">$INFO[ListItem.Icon]</texture>
 					<bordertexture border="20">thumb_background.png</bordertexture>
-					<bordersize>18</bordersize>
-					<texture blend="true">$INFO[ListItem.Thumb]</texture>
-					<aspectratio scalediffuse="true">fit</aspectratio>
-					<fadetime>200</fadetime>
+					<bordersize>20</bordersize>
+					<aspectratio scalediffuse="false">scale</aspectratio>
 					<animation type="Focus" reversible="false">
-						<effect type="zoom" start="60" end="124" time="120" center="auto"/>
+						<effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out"/>
+						<effect type="fade" start="0" end="100" time="200"/>
 					</animation>
 				</control>
-				<control type="label" id="1">
-					<posx>290</posx>
-					<posy>40</posy>
-					<width>770</width>
-					<label>[UPPERCASE]$INFO[ListItem.Episode]. $INFO[ListItem.Label][/UPPERCASE]</label>
+				<control type="textbox">
+					<posx>292</posx>
+					<posy>62</posy>
+					<width>633</width>
+					<height>102</height>
+					<align>left</align>
+					<info>ListItem.Plot</info>
+					<autoscroll time="3200" delay="6000" repeat="6000">true</autoscroll>
+					<font>info1</font>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
+				</control>
+				<control type="label">
+					<posx>292</posx>
+					<posy>-13</posy>
+					<width>633</width>
+					<height>164</height>
+					<aligny>center</aligny>
 					<font>title1</font>
 					<textcolor>White</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<visible>IsEmpty(ListItem.Title)</visible>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
 				</control>
-				<control type="label" id="1">
-					<posx>290</posx>
-					<posy>65</posy>
-					<width>975</width>
-					<label>$INFO[ListItem.Date]</label>
-					<font>list1</font>
+				<control type="label">
+					<posx>292</posx>
+					<posy>13</posy>
+					<width>633</width>
+					<height>60</height>
+					<align>left</align>
+					<label>$LOCALIZE[20416]: $INFO[ListItem.Property(originallyAvailableAt)]</label>
+					<font>info1</font>
 					<textcolor>WhiteTrans</textcolor>
+					<visible>!IsEmpty(ListItem.Title)</visible>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
+				</control>
+				<control type="label">
+					<posx>292</posx>
+					<posy>0</posy>
+					<width>633</width>
+					<label>[COLOR=WhiteTrans]$INFO[ListItem.Episode]. [/COLOR]$INFO[ListItem.Title]</label>
+					<font>title1</font>
+					<textcolor>White</textcolor>
+					<animation type="Focus" reversible="false">
+						<effect type="fade" start="0" end="100" time="200"/>
+					</animation>
+					<include>Animation_HiddenByInfo</include>
+					<visible>!IsEmpty(ListItem.Title)</visible>
 				</control>
 			</focusedlayout>
-		</control>
-		<control type="textbox">
-			<description>Plot/Details</description>
-			<info>ListItem.Plot</info>
-			<textcolor>White</textcolor>
-			<font>plot1</font>
-			<posx>290</posx>
-			<posy>317</posy>
-			<width>950</width>
-			<height>60</height>
-			<visible>Container.Content(Episodes)</visible>
-			<visible>!Container.OnNext + !Container.OnPrevious + Control.HasFocus(59)</visible>
-			<visible>Control.IsVisible(59)</visible>
-			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
 		</control>
 	</include>
 	<include name="Poster">
