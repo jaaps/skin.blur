@@ -323,34 +323,6 @@
 			<textcolor>White</textcolor>
 		</control>
 		<control type="group">
-			<visible>System.hasnetwork + !Skin.HasSetting(HideWeather)</visible>
-			<control type="label">
-				<posx>1230</posx>
-				<posy>15</posy>
-				<visible>true + System.timeisampm</visible>
-				<width>500</width>
-				<height>56</height>
-				<label>[COLOR=WhiteTrans]$INFO[Weather.Conditions], $INFO[Weather.Temperature] [/COLOR]   $INFO[System.TimeNoAmPm]</label>
-				<font>info1</font>
-				<align>right</align>
-				<aligny>center</aligny>
-				<textcolor>White</textcolor>
-			</control>
-			<control type="label">
-				<visible>true + !System.timeisampm</visible>
-				<posx>1230</posx>
-				<posy>15</posy>
-				<width>500</width>
-				<height>56</height>
-				<label>[COLOR=WhiteTrans]$INFO[Weather.Conditions], $INFO[Weather.Temperature] [/COLOR]   $INFO[System.TimeAmPm]</label>
-				<font>info1</font>
-				<align>right</align>
-				<aligny>center</aligny>
-				<textcolor>White</textcolor>
-			</control>
-		</control>
-		<control type="group">
-			<visible>!System.hasnetwork | Skin.HasSetting(HideWeather)</visible>
 			<control type="label">
 				<posx>1230</posx>
 				<posy>15</posy>
