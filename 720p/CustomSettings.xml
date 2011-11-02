@@ -337,9 +337,9 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Weather information</label>
-					<onclick>Skin.ToggleSetting(HideWeather)</onclick>
-					<selected>!Skin.HasSetting(HideWeather)</selected>
+					<label>Show Rating as text</label>
+					<onclick>Skin.ToggleSetting(AlternateRating)</onclick>
+					<selected>Skin.HasSetting(AlternateRating)</selected>
 				</control>
 				<control type="radiobutton" id="2027">
 					<height>50</height>
@@ -348,43 +348,11 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Weather Page in Home-&gt;Apps</label>
-					<onclick>Skin.ToggleSetting(ShowMyWeather)</onclick>
-					<selected>Skin.HasSetting(ShowMyWeather)</selected>
-				</control>
-				<control type="radiobutton" id="2028">
-					<height>50</height>
-					<width>710</width>
-					<textoffsetx>20</textoffsetx>
-					<align>left</align>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<label>Show Rating as text</label>
-					<onclick>Skin.ToggleSetting(AlternateRating)</onclick>
-					<selected>Skin.HasSetting(AlternateRating)</selected>
-				</control>
-				<control type="radiobutton" id="2029">
-					<height>50</height>
-					<width>710</width>
-					<textoffsetx>20</textoffsetx>
-					<align>left</align>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<label>Show Other Apps in Home-&gt;Apps</label>
+					<label>Show Other Channels in Home-&gt;Apps</label>
 					<onclick>Skin.ToggleSetting(ShowOtherApps)</onclick>
 					<selected>Skin.HasSetting(ShowOtherApps)</selected>
 				</control>
-				<control type="radiobutton" id="2030">
-					<height>50</height>
-					<width>710</width>
-					<textoffsetx>20</textoffsetx>
-					<align>left</align>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<label>Show DVD in Home-&gt;My Media</label>
-					<onclick>Skin.ToggleSetting(ShowDVD)</onclick>
-					<selected>Skin.HasSetting(ShowDVD)</selected>
-				</control>
+
 			</control>
 		</control>
 	</controls>

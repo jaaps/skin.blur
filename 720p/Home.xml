@@ -1,13 +1,19 @@
 <?xml version="1.0"?>
 <window id="0">
-	<defaultcontrol always="true">299</defaultcontrol>
+	<defaultcontrol always="true">200</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>
 		<include>Background_Home</include>
 		<include>Header</include>
 		<control type="image">
 			<height>600</height>
-			<posx>560</posx>
+			<posx>360</posx>
+			<posy>100</posy>
+			<texture>divider.png</texture>
+		</control>
+		<control type="image">
+			<height>600</height>
+			<posx>820</posx>
 			<posy>100</posy>
 			<texture>divider.png</texture>
 		</control>
@@ -34,9 +40,9 @@
 		</control>
 		<control type="list" id="200">
 			<description>Home Fixedlist</description>
-			<posx>130</posx>
+			<posx>0</posx>
 			<posy>170</posy>
-			<width>700</width>
+			<width>360</width>
 			<height>720</height>
 			<visible>-</visible>
 			<onright>299</onright>
@@ -45,9 +51,9 @@
 			<animation effect="fade" start="100" end="30" time="300" condition="ControlGroup(299).HasFocus">Conditional</animation>
 			<itemlayout height="90">
 				<control type="label">
-					<posx>400</posx>
+					<posx>300</posx>
 					<posy>48</posy>
-					<width>400</width>
+					<width>300</width>
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					<textcolor>WhiteTrans</textcolor>
 					<font>HomeMenuItemNoFocus</font>
@@ -57,9 +63,9 @@
 			</itemlayout>
 			<focusedlayout height="90">
 				<control type="label">
-					<posx>400</posx>
+					<posx>300</posx>
 					<posy>48</posy>
-					<width>400</width>
+					<width>300</width>
 					<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					<textcolor>White</textcolor>
 					<scroll>false</scroll>
@@ -69,14 +75,14 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
-					<description>My Media</description>
-					<label>My Media</label>
+					<description>Media</description>
+					<label>Media</label>
 					<onclick>SetFocus(299)</onclick>
 					<thumb>icons/icon_pictures.png</thumb>
 				</item>
 				<item id="2">
-					<description>Apps</description>
-					<label>Apps</label>
+					<description>Channels</description>
+					<label>Channels</label>
 					<onclick>SetFocus(299)</onclick>
 				</item>
 				<item id="3">
@@ -92,27 +98,17 @@
 			</content>
 		</control>
 		<control type="group" id="299">
-			<onup>Setfocus(299)</onup>
-			<ondown>Setfocus(299)</ondown>
-			<onleft>Setfocus(299)</onleft>
-			<onright>Setfocus(299)</onright>
-			<onfocus>Setfocus(299)</onfocus>
 			<animation effect="fade" start="30" end="100" time="300" condition="ControlGroup(299).HasFocus">Conditional</animation>
 			<control type="list" id="300">
 				<description>Home Fixedlist</description>
-				<posx>590</posx>
+				<posx>390</posx>
 				<posy>210</posy>
 				<width>700</width>
 				<height>300</height>
-				<onup>Setfocus(300)</onup>
-				<ondown>Setfocus(300)</ondown>
-				<onleft>Setfocus(200)</onleft>
-				<onright>Setfocus(300)</onright>
-				<onfocus>Setfocus(300)</onfocus>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<onfocus>SetFocus(200,1)</onfocus>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(1) | Container(300).HasFocus</visible>
+				<onleft>200</onleft>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(1) | Control.HasFocus(300)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">
@@ -149,40 +145,90 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<item id="1">
-						<description>Favorites Menu</description>
-						<label>Favorites</label>
-						<onclick>Plex.ActivateWindow(Favourites)</onclick>
-						<visible>Skin.HasSetting(ShowFavorites)</visible>
+					<item id="6">
+						<description>Preferences Menu</description>
+						<label> $LOCALIZE[31955] </label>
+						<onclick>SetFocus(506)</onclick>
+						<visible>false</visible>
 					</item>
-					<item id="2">
-						<description>DVD</description>
-						<label>DVD</label>
-						<onclick>XBMC.PlayDVD</onclick>
-						<visible>System.HasMediadvd + Skin.HasSetting(ShowDVD)</visible>
-					</item>
-					<item id="3">
+					<item id="7">
 						<description>Search Menu</description>
 						<label> Search </label>
 						<onclick>Plex.ActivateWindow(10051)</onclick>
+						<visible>false</visible>
+					</item>
+					<item id="111">
+						<description>Quit Button</description>
+						<label> $LOCALIZE[31007] </label>
+						<onclick>Plex.ShutDown</onclick>
+						<visible>false</visible>
+					</item>
+					<item id="112">
+						<description>Sleep Button</description>
+						<label> $LOCALIZE[31960] </label>
+						<onclick>Plex.SleepSystem</onclick>
+						<visible>false</visible>
+					</item>
+					<item id="113">
+						<description>Shut Down Button</description>
+						<label> $LOCALIZE[31961] </label>
+						<onclick>Plex.ShutDownSystem</onclick>
+						<visible>false</visible>
+					</item>
+					<item id="2">
+						<description>My Music Button</description>
+						<label> $LOCALIZE[31972] </label>
+						<visible>false</visible>
+						<onclick>XBMC.ActivateWindow(5)</onclick>
+					</item>
+					<item id="13">
+						<description>Help Menu</description>
+						<label> $LOCALIZE[31954] </label>
+						<visible>false</visible>
+						<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/help,return)</onclick>
+					</item>
+					<item id="12">
+						<description>Plex Online Menu</description>
+						<label> $LOCALIZE[31952] </label>
+						<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/plexonline,return)</onclick>
+						<visible>false</visible>
+					</item>
+					<item id="1">
+						<description>My Videos Button</description>
+						<label> $LOCALIZE[31971] </label>
+						<visible>false</visible>
+						<onclick>XBMC.ActivateWindow(24)</onclick>
+					</item>
+					<item id="3">
+						<description>My Pics Button</description>
+						<label> $LOCALIZE[31973] </label>
+						<visible>false</visible>
+						<onclick>XBMC.ActivateWindow(2)</onclick>
+					</item>
+					<item id="4">
+						<description>My Programs Menu</description>
+						<label> $LOCALIZE[31004] </label>
+						<visible>false</visible>
+						<onclick>XBMC.ActivateWindow(1)</onclick>
+					</item>
+					<item id="10">
+						<description>DVD Button</description>
+						<label>DVD</label>
+						<visible>false</visible>
+						<onclick>XBMC.PlayDVD</onclick>
 					</item>
 				</content>
 			</control>
 			<control type="list" id="400">
 				<description>Home Fixedlist</description>
-				<posx>590</posx>
+				<posx>390</posx>
 				<posy>210</posy>
 				<width>700</width>
 				<height>300</height>
-				<onup>Setfocus(400)</onup>
-				<ondown>Setfocus(400)</ondown>
-				<onleft>Setfocus(200)</onleft>
-				<onright>Setfocus(400)</onright>
-				<onfocus>Setfocus(400)</onfocus>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<onfocus>SetFocus(200)</onfocus>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(2) | Container(400).HasFocus</visible>
+				<onleft>200</onleft>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(2) | Control.HasFocus(400)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">
@@ -219,55 +265,43 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<description>Video Apps</description>
-						<label>Video Apps</label>
+						<description>Video Channels</description>
+						<label>Video Channels</label>
 						<onclick>xbmc.activatewindow(6)</onclick>
 					</item>
 					<item id="2">
-						<description>Music Apps</description>
-						<label>Music Apps</label>
+						<description>Music Channels</description>
+						<label>Music Channels</label>
 						<onclick>xbmc.activatewindow(5)</onclick>
 					</item>
 					<item id="3">
-						<description>Photo Apps</description>
-						<label>Photo Apps</label>
+						<description>Photo Channels</description>
+						<label>Photo Channels</label>
 						<onclick>xbmc.activatewindow(2)</onclick>
 					</item>
 					<item id="4">
-						<description>Other Apps</description>
-						<label>Other Apps</label>
+						<description>Other Channels</description>
+						<label>Other Channels</label>
 						<onclick>xbmc.activatewindow(1)</onclick>
 						<visible>Skin.HasSetting(ShowOtherApps)</visible>
 					</item>
-					<item id="5">
-						<description>Weather</description>
-						<label>Weather Forecast</label>
-						<onclick>xbmc.activatewindow(2600)</onclick>
-						<visible>Skin.HasSetting(ShowMyWeather)</visible>
-					</item>
 					<item id="6">
 						<description>Plex Online Menu</description>
-						<label>App Store</label>
+						<label>Channel Directory</label>
 						<onclick>Plex.ActivateWindow(1,plex://localhost/system/plexonline,return)</onclick>
 					</item>
 				</content>
 			</control>
 			<control type="list" id="500">
 				<description>Home Fixedlist</description>
-				<posx>590</posx>
+				<posx>390</posx>
 				<posy>210</posy>
 				<width>700</width>
 				<height>400</height>
-				<onup>Setfocus(500)</onup>
-				<ondown>Setfocus(500)</ondown>
-				<onleft>Setfocus(200)</onleft>
-				<onright>Setfocus(500)</onright>
-				<onfocus>Setfocus(500)</onfocus>
-				<onleft>200</onleft>
-				<onright>200</onright>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(3) | Container(500).HasFocus</visible>
+				<onleft>200</onleft>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(3) | Control.HasFocus(500)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">
@@ -348,20 +382,14 @@
 			</control>
 			<control type="list" id="600">
 				<description>Home Fixedlist</description>
-				<posx>590</posx>
+				<posx>390</posx>
 				<posy>210</posy>
 				<width>700</width>
 				<height>300</height>
-				<onup>Setfocus(600)</onup>
-				<ondown>Setfocus(600)</ondown>
-				<onleft>Setfocus(200)</onleft>
-				<onright>Setfocus(600)</onright>
-				<onfocus>Setfocus(600)</onfocus>
-				<onleft>200</onleft>
-				<onright>200</onright>
 				<focusposition>1</focusposition>
 				<scrolltime>200</scrolltime>
-				<visible allowhiddenfocus="false">Container(200).HasFocus(4) | Container(600).HasFocus</visible>
+				<onleft>200</onleft>
+				<visible allowhiddenfocus="false">Container(200).HasFocus(4) | Control.HasFocus(600)</visible>
 				<animation effect="fade" time="300">VisibleChange</animation>
 				<itemlayout height="50">
 					<control type="label">

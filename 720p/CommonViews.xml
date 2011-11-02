@@ -523,7 +523,7 @@
 			<visible>Control.IsVisible(56)</visible>
 			<posx>100</posx>
 			<posy>445</posy>
-			<width>430</width>
+			<width>1080</width>
 			<height>558</height>
 			<itemgap>5</itemgap>
 			<orientation>vertical</orientation>
@@ -557,38 +557,6 @@
 				<colordiffuse>WhiteTrans</colordiffuse>
 				<aspectratio aligny="center" align="left">keep</aspectratio>
 			</control>
-			<control type="label">
-				<posx>102</posx>
-				<posy>0</posy>
-				<width>350</width>
-				<height>34</height>
-				<font>info1</font>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>WhiteTrans</textcolor>
-				<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] </label>
-				<visible>!Skin.HasSetting(ShowMPAA) | IsEmpty(ListItem.MPAA)</visible>
-			</control>
-			<control type="label">
-				<posx>102</posx>
-				<posy>0</posy>
-				<width>350</width>
-				<height>34</height>
-				<font>info1</font>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>WhiteTrans</textcolor>
-				<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] - $INFO[ListItem.MPAA]</label>
-				<visible>Skin.HasSetting(ShowMPAA) + !IsEmpty(ListItem.MPAA)</visible>
-			</control>
-			<control type="image">
-				<width>52</width>
-				<height>22</height>
-				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<visible>Skin.HasSetting(Flags)</visible>
-			</control>
-		</control>
 		<control type="textbox">
 			<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
 			<visible>!Container.OnNext + !Container.OnPrevious</visible>
@@ -596,8 +564,8 @@
 			<visible>Control.IsVisible(56)</visible>
 			<posx>560</posx>
 			<posy>450</posy>
-			<width>600</width>
-			<height>190</height>
+			<width>1080</width>
+			<height>89</height>
 			<font>info1</font>
 			<align>left</align>
 			<aligny>top</aligny>
@@ -605,15 +573,31 @@
 			<label>$INFO[ListItem.Plot]</label>
 			<wrapmultiline>true</wrapmultiline>
 		</control>
-		<control type="image">
-			<height>680</height>
-			<posx>520</posx>
-			<posy>400</posy>
-			<texture>divider.png</texture>
-			<visible>Control.IsVisible(56) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
-			<animation effect="slide" start="0" end="280" time="1" condition="Control.IsVisible(55)">Conditional</animation>
-			<animation effect="slide" start="0" end="260" time="1" condition="Control.IsVisible(50)">Conditional</animation>
+		<control type="label">
+			<posx>102</posx>
+			<posy>0</posy>
+			<width>1080</width>
+			<height>34</height>
+			<font>info1</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>WhiteTrans</textcolor>
+			<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] </label>
+			<visible>!Skin.HasSetting(ShowMPAA) | IsEmpty(ListItem.MPAA)</visible>
 		</control>
+		<control type="label">
+			<posx>102</posx>
+			<posy>0</posy>
+			<width>1080</width>
+			<height>34</height>
+			<font>info1</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>WhiteTrans</textcolor>
+			<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] - $INFO[ListItem.MPAA]</label>
+			<visible>Skin.HasSetting(ShowMPAA) + !IsEmpty(ListItem.MPAA)</visible>
+		</control>
+	</control>
 		<!-- END: MOVIES -->
 	</include>
 	<include name="Horizon">
