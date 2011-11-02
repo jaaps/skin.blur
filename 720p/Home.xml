@@ -296,9 +296,15 @@
 						<onclick>xbmc.activatewindow(2)</onclick>
 					</item>
 					<item id="4">
+						<description>Other Channels</description>
+						<label>Other Channels</label>
+						<onclick>xbmc.activatewindow(1)</onclick>
+						<visible>Skin.HasSetting(ShowOtherApps)</visible>
+					</item>
+					<item id="5">
 						<description>Plex Connect</description>
 						<label>Channel Directory</label>
-						<onclick>Plex.ActivateWindow(1,plex://localhost/system/plexonline,return)</onclick>
+						<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/plexonline,return)</onclick>
 					</item>
 				</content>
 			</control>
