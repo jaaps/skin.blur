@@ -231,6 +231,17 @@
 				<onleft>3</onleft>
 				<onright>3</onright>
 				<orientation>vertical</orientation>
+				<control type="radiobutton" id="2016">
+					<height>50</height>
+					<width>710</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>Hide Tips in Home</label>
+					<selected>Skin.HasSetting(HideHomeTips)</selected>
+					<onclick>Skin.ToggleSetting(HideHomeTips)</onclick>
+				</control>
 				<control type="radiobutton" id="2017">
 					<height>50</height>
 					<width>710</width>
