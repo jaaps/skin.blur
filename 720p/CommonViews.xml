@@ -1678,7 +1678,6 @@
 					<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" delay="10">UnFocus</animation>
 					<visible>Container.Content(secondary)</visible>
 				</control>
-				
 				<control type="image">
 					<posy>0</posy>
 					<posx>0</posx>
@@ -1689,8 +1688,6 @@
 					<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" delay="10">UnFocus</animation>
 					<visible>!Container.Content(secondary)</visible>
 				</control>
-				
-				
 				<control type="group">
 					<visible>!Skin.HasSetting(NoWatchedFlags)</visible>
 					<control type="group">
