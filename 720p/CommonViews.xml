@@ -2,20 +2,46 @@
 <includes>
 	<include name="Info">
 		<control type="image">
-			<posy>152</posy>
-			<posx>530</posx>
-			<visible>!IsEmpty(ListItem.Thumb) </visible>
-			<width>280</width>
-			<height>388</height>
-			<aspectratio align="right" aligny="top">keep</aspectratio>
-			<info>ListItem.Thumb</info>
-			<colordiffuse>FFFFFFFF</colordiffuse>
-			<align>left</align>
-			<visible>!Container.OnNext + !Container.OnPrevious</visible>
-			<bordertexture border="20">thumb_background.png</bordertexture>
-			<bordersize>20</bordersize>
-			<fadetime>200</fadetime>
-			<visible>Control.IsVisible(51) + !Container.Content(secondary)</visible>
+			<posy>122</posy>
+			<posx>550</posx>
+			<width>252</width>
+			<height>380</height>
+			<aspectratio>scale</aspectratio>
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<texture>thumb_poster_background.png</texture>
+			<visible>Control.IsVisible(51) + !Container.Content(secondary) + [Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
+		</control>
+		<control type="image">
+			<posy>160</posy>
+			<posx>575</posx>
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<width>202</width>
+			<height>304</height>
+			<aspectratio align="center" aligny="center">scale</aspectratio>
+			<texture background="true">$INFO[ListItem.Thumb]</texture>
+			<fadetime>400</fadetime>
+			<visible>Control.IsVisible(51) + !Container.Content(secondary) + [Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
+		</control>
+		<control type="image">
+			<posy>122</posy>
+			<posx>550</posx>
+			<width>244</width>
+			<height>244</height>
+			<aspectratio>scale</aspectratio>
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<texture>thumb_square_background.png</texture>
+			<visible>Control.IsVisible(51) + !Container.Content(secondary) + ![Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
+		</control>
+		<control type="image">
+			<posy>142</posy>
+			<posx>570</posx>
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<width>204</width>
+			<height>204</height>
+			<aspectratio align="center" aligny="center">scale</aspectratio>
+			<texture background="true">$INFO[ListItem.Thumb]</texture>
+			<fadetime>400</fadetime>
+			<visible>Control.IsVisible(51) + !Container.Content(secondary) + ![Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
 		</control>
 		<control type="image">
 			<height>680</height>
@@ -35,7 +61,7 @@
 			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
 			<posx>838</posx>
 			<posy>152</posy>
-			<width>352</width>
+			<width>372</width>
 			<height>799</height>
 			<itemgap>8</itemgap>
 			<orientation>vertical</orientation>
@@ -69,36 +95,211 @@
 				<colordiffuse>WhiteTrans</colordiffuse>
 				<aspectratio aligny="center" align="left">keep</aspectratio>
 			</control>
-			<control type="textbox">
-				<description>Plot/Details</description>
-				<width>340</width>
-				<height>200</height>
-				<info>ListItem.Plot</info>
-				<textcolor>White</textcolor>
-				<font>plot1</font>
-				<autoscroll delay="9001" time="2000" repeat="10000">true</autoscroll>
-			</control>
-			<control type="label">
-				<posx>102</posx>
-				<posy>0</posy>
-				<width>350</width>
-				<height>30</height>
-				<font>info1</font>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>WhiteTrans</textcolor>
-				<label>$INFO[ListItem.Year] - $INFO[ListItem.FirstGenre]</label>
-			</control>
-			<control type="label">
-				<posx>102</posx>
-				<posy>0</posy>
-				<width>350</width>
-				<height>30</height>
-				<font>info1</font>
-				<align>left</align>
-				<aligny>top</aligny>
-				<textcolor>WhiteTrans</textcolor>
-				<label>$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes</label>
+			<control type="group">
+				<height>900</height>
+				<control type="grouplist">
+					<width>370</width>
+					<height>345</height>
+					<orientation>vertical</orientation>
+					<control type="textbox">
+						<description>Plot/Details</description>
+						<width>370</width>
+						<height>585</height>
+						<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+						<textcolor>White</textcolor>
+						<font>plot1</font>
+						<autoscroll>false</autoscroll>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>345</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-345</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade1</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>355</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-355</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade2</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>365</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-365</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade3</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>375</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-375</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade4</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>385</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-385</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade5</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>395</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-395</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade6</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>405</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-405</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade7</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>415</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-415</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade8</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>425</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-425</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade9</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
 			</control>
 		</control>
 		<control type="grouplist">
@@ -107,7 +308,7 @@
 			<visible>Control.IsVisible(51) | Control.IsVisible(55)</visible>
 			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
 			<posx>838</posx>
-			<posy>152</posy>
+			<posy>122</posy>
 			<width>352</width>
 			<height>534</height>
 			<itemgap>8</itemgap>
@@ -160,8 +361,8 @@
 			<visible>Control.IsVisible(51)</visible>
 			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
 			<posx>838</posx>
-			<posy>152</posy>
-			<width>352</width>
+			<posy>122</posy>
+			<width>372</width>
 			<height>534</height>
 			<itemgap>8</itemgap>
 			<orientation>vertical</orientation>
@@ -203,6 +404,212 @@
 				<info>ListItem.StarRating</info>
 				<colordiffuse>WhiteTrans</colordiffuse>
 				<aspectratio aligny="center" align="left">keep</aspectratio>
+			</control>
+			<control type="group">
+				<height>900</height>
+				<control type="grouplist">
+					<width>370</width>
+					<height>345</height>
+					<orientation>vertical</orientation>
+					<control type="textbox">
+						<description>Plot/Details</description>
+						<width>370</width>
+						<height>585</height>
+						<label>[COLOR=WhiteTrans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+						<textcolor>White</textcolor>
+						<font>plot1</font>
+						<autoscroll>false</autoscroll>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>345</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-345</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade1</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>355</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-355</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade2</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>365</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-365</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade3</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>375</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-375</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade4</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>385</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-385</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade5</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>395</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-395</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade6</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>405</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-405</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade7</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>415</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-415</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade8</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>425</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-425</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade9</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
 			</control>
 			<control type="textbox">
 				<description>Plot/Details</description>
@@ -475,45 +882,211 @@
 				<colordiffuse>WhiteTrans</colordiffuse>
 				<aspectratio aligny="center" align="left">keep</aspectratio>
 			</control>
-			<control type="textbox">
-				<description>Plot/Details</description>
-				<width>340</width>
-				<height>200</height>
-				<info>ListItem.Plot</info>
-				<textcolor>White</textcolor>
-				<font>plot1</font>
-				<autoscroll delay="9001" time="2000" repeat="10000">true</autoscroll>
-			</control>
-			<control type="label">
-				<posx>102</posx>
-				<posy>0</posy>
-				<width>350</width>
-				<height>34</height>
-				<font>info1</font>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>WhiteTrans</textcolor>
-				<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] </label>
-				<visible>!Skin.HasSetting(ShowMPAA) | IsEmpty(ListItem.MPAA)</visible>
-			</control>
-			<control type="label">
-				<posx>102</posx>
-				<posy>0</posy>
-				<width>350</width>
-				<height>34</height>
-				<font>info1</font>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>WhiteTrans</textcolor>
-				<label>$INFO[ListItem.Year] - $INFO[ListItem.Duration] - $INFO[ListItem.FirstGenre] - $INFO[ListItem.MPAA]</label>
-				<visible>Skin.HasSetting(ShowMPAA) + !IsEmpty(ListItem.MPAA)</visible>
-			</control>
-			<control type="image">
-				<width>52</width>
-				<height>22</height>
-				<texture>$INFO[Listitem.Property(mediaTag-videoResolution),flags/resolution/,.png]</texture>
-				<aspectratio align="left" aligny="top">keep</aspectratio>
-				<visible>Skin.HasSetting(Flags)</visible>
+			<control type="group">
+				<height>900</height>
+				<control type="grouplist">
+					<width>370</width>
+					<height>345</height>
+					<orientation>vertical</orientation>
+					<control type="textbox">
+						<description>Plot/Details</description>
+						<width>370</width>
+						<height>585</height>
+						<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+						<textcolor>White</textcolor>
+						<font>plot1</font>
+						<autoscroll>false</autoscroll>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>345</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-345</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade1</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>355</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-355</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade2</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>365</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-365</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade3</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>375</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-375</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade4</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>385</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-385</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade5</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>395</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-395</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade6</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>405</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-405</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade7</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>415</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-415</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade8</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posy>425</posy>
+					<width>370</width>
+					<height>10</height>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+					<control type="group">
+						<height>10</height>
+						<width>370</width>
+						<control type="textbox">
+							<posy>-425</posy>
+							<description>Plot/Details</description>
+							<width>370</width>
+							<height>670</height>
+							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
+							<textcolor>WhiteFade9</textcolor>
+							<font>plot1</font>
+							<autoscroll>false</autoscroll>
+						</control>
+					</control>
+				</control>
 			</control>
 		</control>
 		<control type="grouplist">
@@ -522,7 +1095,7 @@
 			<animation effect="fade" start="0" end="100" time="500" tween="cubic" easing="inout" delay="50">Visible</animation>
 			<visible>Control.IsVisible(56)</visible>
 			<posx>100</posx>
-			<posy>445</posy>
+			<posy>465</posy>
 			<width>1080</width>
 			<height>558</height>
 			<itemgap>5</itemgap>
@@ -604,7 +1177,7 @@
 		<control type="fixedlist" id="56">
 			<viewtype label="PosterWrap">PosterWrap</viewtype>
 			<posx>-5</posx>
-			<posy>105</posy>
+			<posy>85</posy>
 			<width>1450</width>
 			<height>425</height>
 			<onup>9000</onup>
@@ -615,34 +1188,54 @@
 			<focusposition>1</focusposition>
 			<pagecontrol>65</pagecontrol>
 			<scrolltime>150</scrolltime>
-			<itemlayout height="400" width="208">
-				<control type="image">
-					<posx>16</posx>
-					<posy>16</posy>
-					<width>185</width>
-					<height>273</height>
-					<aspectratio align="center">fit</aspectratio>
-					<texture>$INFO[ListItem.Thumb]</texture>
-					<bordertexture border="20">thumb_background.png</bordertexture>
-					<bordersize>19</bordersize>
+			<itemlayout height="400" width="176">
+				<control type="group">
+					<posx>0</posx>
+					<animation effect="zoom" start="70" end="70" time="0" center="auto" condition="true">Conditional</animation>
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>252</width>
+						<height>380</height>
+						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<texture>thumb_poster_background.png</texture>
+					</control>
+					<control type="image">
+						<posy>38</posy>
+						<posx>25</posx>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<width>202</width>
+						<height>304</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<fadetime>400</fadetime>
+					</control>
 				</control>
 			</itemlayout>
-			<focusedlayout height="400" width="208">
-				<control type="image">
-					<posx>16</posx>
-					<posy>16</posy>
-					<width>185</width>
-					<height>273</height>
-					<aspectratio align="center">fit</aspectratio>
-					<texture>$INFO[ListItem.Thumb]</texture>
-					<bordertexture border="20">thumb_background.png</bordertexture>
-					<bordersize>19</bordersize>
-					<animation type="focus">
-						<effect type="zoom" tween="Back" start="100,100" end="130,130" easing="Out" reversible="false" center="105,150" time="250"/>
-					</animation>
-					<animation type="unfocus">
-						<effect type="zoom" tween="Cubic" start="130,130" end="100,100" easing="Out" reversible="false" center="105,150" time="250"/>
-					</animation>
+			<focusedlayout height="400" width="242">
+				<control type="group">
+					<posx>20</posx>
+					<animation effect="zoom" start="70" end="100" time="210" center="auto">Focus</animation>
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>252</width>
+						<height>380</height>
+						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<texture>thumb_poster_background.png</texture>
+					</control>
+					<control type="image">
+						<posy>38</posy>
+						<posx>25</posx>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<width>202</width>
+						<height>304</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<fadetime>400</fadetime>
+					</control>
 				</control>
 			</focusedlayout>
 		</control>
@@ -921,15 +1514,23 @@
 			<posy>100</posy>
 			<posx>800</posx>
 			<visible>!IsEmpty(ListItem.Thumb)</visible>
-			<width>400</width>
-			<height>520</height>
-			<aspectratio align="right" aligny="center">keep</aspectratio>
-			<info>ListItem.Thumb</info>
+			<width>398</width>
+			<height>600</height>
+			<aspectratio>scale</aspectratio>
+			<texture>thumb_poster_big_background.png</texture>
+			<visible>Control.IsVisible(50) + !Container.Content(secondary)</visible>
+		</control>
+		<control type="image">
+			<posy>156</posy>
+			<posx>837</posx>
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<width>324</width>
+			<height>488</height>
+			<aspectratio align="right" aligny="center">scale</aspectratio>
+			<info background="true">ListItem.Thumb</info>
 			<colordiffuse>FFFFFFFF</colordiffuse>
 			<align>left</align>
-			<visible>!Container.OnNext + !Container.OnPrevious</visible>
-			<bordertexture border="20">thumb_background.png</bordertexture>
-			<bordersize>20</bordersize>
+			<fadetime>400</fadetime>
 			<visible>Control.IsVisible(50) + !Container.Content(secondary)</visible>
 		</control>
 		<control type="list" id="50">
@@ -1069,7 +1670,7 @@
 				<control type="image">
 					<posy>0</posy>
 					<posx>0</posx>
-					<width>710</width>
+					<width>920</width>
 					<height>50</height>
 					<texture>button.png</texture>
 					<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="10">Focus</animation>
@@ -1407,32 +2008,47 @@
 			<height>575</height>
 			<scrolltime>300</scrolltime>
 			<orientation>vertical</orientation>
-			<itemlayout height="144" width="144">
-				<control type="image">
-					<posx>10</posx>
-					<posy>10</posy>
-					<width>124</width>
-					<height>124</height>
-					<texture blend="true">$INFO[ListItem.Thumb]</texture>
-					<aspectratio scalediffuse="true">fit</aspectratio>
-					<fadetime>200</fadetime>
+			<itemlayout height="168" width="168">
+				<control type="group">
+					<animation effect="zoom" start="70" end="70" time="0" center="auto" condition="true">Conditional</animation>
+					<control type="image">
+						<posy>10</posy>
+						<posx>10</posx>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<width>204</width>
+						<height>204</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<fadetime>400</fadetime>
+					</control>
 				</control>
 			</itemlayout>
-			<focusedlayout height="144" width="144">
-				<control type="image">
-					<posx>-10</posx>
-					<posy>-10</posy>
-					<width>164</width>
-					<height>164</height>
-					<bordertexture border="20">thumb_background.png</bordertexture>
-					<bordersize>20</bordersize>
-					<border>10</border>
-					<texture blend="true">$INFO[ListItem.Thumb]</texture>
-					<aspectratio scalediffuse="true">fit</aspectratio>
-					<fadetime>200</fadetime>
-					<animation type="Focus" reversible="false">
-						<effect type="zoom" start="60" end="130" time="120" center="auto"/>
-					</animation>
+			<focusedlayout height="168" width="168">
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>204</height>
+					<width>204</width>
+					<animation effect="zoom" start="70" end="100" time="210" center="94,94">Focus</animation>
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>204</width>
+						<height>204</height>
+						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<texture>thumb_square_background.png</texture>
+					</control>
+					<control type="image">
+						<posy>20</posy>
+						<posx>20</posx>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<width>164</width>
+						<height>164</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<fadetime>400</fadetime>
+					</control>
 				</control>
 			</focusedlayout>
 		</control>

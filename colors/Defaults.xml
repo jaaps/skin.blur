@@ -1,9 +1,19 @@
+<?xml version="1.0"?>
 <colors>
 	<color name="Black">FF000000</color>
 	<color name="BlackShadow">FF666666</color>
 	<color name="White">FFFFFFFF</color>
 	<color name="WhiteTrans">97FFFFFF</color>
+	<color name="WhiteFade1">e6FFFFFF</color>
+	<color name="WhiteFade2">cdFFFFFF</color>
+	<color name="WhiteFade3">aaFFFFFF</color>
+	<color name="WhiteFade4">91FFFFFF</color>
+	<color name="WhiteFade5">78FFFFFF</color>
+	<color name="WhiteFade6">5fFFFFFF</color>
+	<color name="WhiteFade7">46FFFFFF</color>
+	<color name="WhiteFade8">2dFFFFFF</color>
+	<color name="WhiteFade9">14FFFFFF</color>
 	<color name="Trans">00FFFFFF</color>
-    <color name="Gray">22FFFFFF</color>
+	<color name="Gray">22FFFFFF</color>
 	<color name="Red">FFFF0000</color>
 </colors>

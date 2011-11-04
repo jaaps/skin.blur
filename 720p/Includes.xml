@@ -33,7 +33,7 @@
 		</control>
 		<control type="button" id="9003">
 			<description>Horizon view button</description>
-			<visible>!Container.Content(secondary) + !Container.Content(episodes) + !Container.Content(albums) + !Container.Content(artists) + !Container.Content(songs) + !Window.IsVisible(28) + !Window.IsVisible(500)</visible>
+			<visible>[Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)] + !Window.IsVisible(28) + !Window.IsVisible(500)</visible>
 			<label>Horizon</label>
 			<onclick>Container.SetViewMode(56)</onclick>
 		</control>

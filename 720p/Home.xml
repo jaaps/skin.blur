@@ -512,13 +512,13 @@
 					<ondown>11000</ondown>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="40">
+						<control type="image">
+							<width>712</width>
+							<height>40</height>
+							<texture border="3">dialogs/list-nofocus.png</texture>
+						</control>
 						<control type="group">
 							<visible>ListItem.Type(movie)</visible>
-							<control type="image">
-								<width>712</width>
-								<height>40</height>
-								<texture border="3">dialogs/list-nofocus.png</texture>
-							</control>
 							<control type="label">
 								<posx>20</posx>
 								<width>410</width>
@@ -530,15 +530,38 @@
 								<textcolor>WhiteTrans</textcolor>
 							</control>
 						</control>
+						<control type="group">
+							<visible>ListItem.Type(episode)</visible>
+							<control type="label">
+								<posx>20</posx>
+								<width>40</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>White</textcolor>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<width>370</width>
+								<height>35</height>
+								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>WhiteTrans</textcolor>
+							</control>
+						</control>
 					</itemlayout>
 					<focusedlayout height="40">
+						<control type="image">
+							<width>712</width>
+							<height>40</height>
+							<texture>dialogs/list-focus.png</texture>
+						</control>
 						<control type="group">
 							<visible>ListItem.Type(movie)</visible>
-							<control type="image">
-								<width>712</width>
-								<height>40</height>
-								<texture>dialogs/list-focus.png</texture>
-							</control>
 							<control type="label">
 								<posx>20</posx>
 								<width>410</width>
@@ -547,6 +570,28 @@
 								<aligny>center</aligny>
 								<textcolor>White</textcolor>
 								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</control>
+						<control type="group">
+							<control type="label">
+								<posx>20</posx>
+								<width>40</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>White</textcolor>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<width>370</width>
+								<height>35</height>
+								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>WhiteTrans</textcolor>
 							</control>
 						</control>
 					</focusedlayout>
@@ -565,6 +610,11 @@
 					<ondown>11001</ondown>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="40">
+						<control type="image">
+							<width>712</width>
+							<height>40</height>
+							<texture border="3">dialogs/list-nofocus.png</texture>
+						</control>
 						<control type="group">
 							<visible>ListItem.Type(movie)</visible>
 							<control type="image">
@@ -583,15 +633,39 @@
 								<textcolor>WhiteTrans</textcolor>
 							</control>
 						</control>
+						<control type="group">
+							<visible>ListItem.Type(episode)</visible>
+							<control type="label">
+								<posx>50</posx>
+								<width>50</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<align>right</align>
+								<textcolor>White</textcolor>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<width>370</width>
+								<height>35</height>
+								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>WhiteTrans</textcolor>
+							</control>
+						</control>
 					</itemlayout>
 					<focusedlayout height="40">
+						<control type="image">
+							<width>712</width>
+							<height>40</height>
+							<texture>dialogs/list-focus.png</texture>
+						</control>
 						<control type="group">
 							<visible>ListItem.Type(movie)</visible>
-							<control type="image">
-								<width>712</width>
-								<height>40</height>
-								<texture>dialogs/list-focus.png</texture>
-							</control>
 							<control type="label">
 								<posx>20</posx>
 								<width>410</width>
@@ -600,6 +674,34 @@
 								<aligny>center</aligny>
 								<textcolor>White</textcolor>
 								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</control>
+						<control type="group">
+							<visible>ListItem.Type(episode)</visible>
+							<control type="image">
+								<width>712</width>
+								<height>40</height>
+								<texture border="3">dialogs/list-nofocus.png</texture>
+							</control>
+							<control type="label">
+								<posx>20</posx>
+								<width>40</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>White</textcolor>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<width>370</width>
+								<height>35</height>
+								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>WhiteTrans</textcolor>
 							</control>
 						</control>
 					</focusedlayout>
@@ -632,6 +734,34 @@
 				<bordersize>20</bordersize>
 				<fadetime>200</fadetime>
 				<visible>Control.HasFocus(11001) + [Container(11001).ListItem(0).Type(movie) | Container(11001).ListItem(0).Type(album)]</visible>
+			</control>
+			<control type="image">
+				<posy>60</posy>
+				<posx>460</posx>
+				<width>250</width>
+				<height>405</height>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
+				<info>Container(11000).ListItem.GrandParentThumb</info>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<align>left</align>
+				<bordertexture border="20">thumb_background.png</bordertexture>
+				<bordersize>20</bordersize>
+				<fadetime>200</fadetime>
+				<visible>Control.HasFocus(11000) + [Container(11000).ListItem(0).Type(episode) | Container(11000).ListItem(0).Type(album)]</visible>
+			</control>
+			<control type="image">
+				<posy>60</posy>
+				<posx>460</posx>
+				<width>250</width>
+				<height>405</height>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
+				<info>Container(11001).ListItem.GrandParentThumb</info>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<align>left</align>
+				<bordertexture border="20">thumb_background.png</bordertexture>
+				<bordersize>20</bordersize>
+				<fadetime>200</fadetime>
+				<visible>Control.HasFocus(11001) + [Container(11001).ListItem(0).Type(episode) | Container(11001).ListItem(0).Type(album)]</visible>
 			</control>
 		</control>
 		<control type="label">
