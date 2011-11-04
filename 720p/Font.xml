@@ -2,6 +2,21 @@
 <fonts>
 	<fontset id="default" unicode="true">
 		<font>
+			<name>tracktitle</name>
+			<filename>GraublauWebBold.ttf</filename>
+			<size>37</size>
+		</font>
+		<font>
+			<name>trackartist</name>
+			<filename>GraublauWeb.ttf</filename>
+			<size>29</size>
+		</font>
+		<font>
+			<name>trackalbum</name>
+			<filename>GraublauWeb.ttf</filename>
+			<size>29</size>
+		</font>
+		<font>
 			<name>MediaPreviewDetailsHeader</name>
 			<filename>HelveticaNeue</filename>
 			<variant>Condensed Bold</variant>
