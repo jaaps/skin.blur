@@ -1991,7 +1991,7 @@
 					<posy>8</posy>
 					<width>118</width>
 					<height>182</height>
-					<texture blend="true">$INFO[ListItem.Thumb]</texture>
+					<texture background="true">$INFO[ListItem.Thumb]</texture>
 					<aspectratio scalediffuse="true">scale</aspectratio>
 					<fadetime>200</fadetime>
 				</control>
@@ -2003,7 +2003,7 @@
 					<width>126</width>
 					<height>190</height>
 					<texture>thumb_poster_background.png</texture>
-					<aspectratio scalediffuse="true">scale</aspectratio>
+					<aspectratio>scale</aspectratio>
 					<fadetime>200</fadetime>
 					<animation type="Focus" reversible="false">
 						<effect type="zoom" start="60" end="140" time="120" center="auto"/>
@@ -2014,8 +2014,8 @@
 					<posy>20</posy>
 					<width>96</width>
 					<height>150</height>
-					<texture blend="true">$INFO[ListItem.Thumb]</texture>
-					<aspectratio scalediffuse="true">scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Thumb]</texture>
+					<aspectratio>scale</aspectratio>
 					<fadetime>200</fadetime>
 					<animation type="Focus" reversible="false">
 						<effect type="zoom" start="60" end="140" time="120" center="auto"/>
@@ -2054,7 +2054,7 @@
 					<posy>0</posy>
 					<height>204</height>
 					<width>204</width>
-					<animation effect="zoom" start="70" end="100" time="210" center="94,94">Focus</animation>
+					<animation effect="zoom" start="40" end="100" time="120" center="94,94">Focus</animation>
 					<control type="image">
 						<posy>0</posy>
 						<posx>0</posx>
