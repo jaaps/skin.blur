@@ -108,7 +108,6 @@
 					<selected>!Skin.HasSetting(Background1)</selected>
 					<include>BackgroundReset</include>
 					<onclick>XBMC.ReloadSkin()</onclick>
-					<onclick>Control.Move(50,0)</onclick>
 				</control>
 				<control type="radiobutton" id="2015">
 					<visible>!Skin.String(Custom_Background)</visible>
@@ -125,7 +124,6 @@
 					<onclick>Skin.SetBool(Background1)</onclick>
 					<onclick>Skin.SetBool(Background2)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
-					<onclick>Control.Move(50,0)</onclick>
 				</control>
 				<control type="radiobutton" id="2016">
 					<visible>!Skin.String(Custom_Background)</visible>
@@ -142,7 +140,6 @@
 					<onclick>Skin.SetBool(Background1)</onclick>
 					<onclick>Skin.SetBool(Background3)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
-					<onclick>Control.Move(50,0)</onclick>
 				</control>
 				<control type="radiobutton" id="2017">
 					<visible>!Skin.String(Custom_Background)</visible>
@@ -154,12 +151,11 @@
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<label>Dark Night</label>
-					<selected>Skin.HasSetting(Background3)</selected>
+					<selected>Skin.HasSetting(Background4)</selected>
 					<include>BackgroundReset</include>
 					<onclick>Skin.SetBool(Background1)</onclick>
 					<onclick>Skin.SetBool(Background4)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
-					<onclick>Control.Move(50,0)</onclick>
 				</control>
 				<control type="label" id="2018">
 					<description>First title</description>
@@ -173,25 +169,27 @@
 					<font>info1</font>
 					<textcolor>White</textcolor>
 				</control>
-				<control type="button" id="2019">
+				<control type="radiobutton" id="2019">
 					<height>50</height>
 					<width>920</width>
 					<textoffsetx>20</textoffsetx>
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Toggle Bokeh 1</label>
+					<label>Add Bokeh effect</label>
 					<onclick>Skin.ToggleSetting(Bokeh1)</onclick>
+					<selected>Skin.HasSetting(Bokeh1)</selected>
 					<onclick>XBMC.ReloadSkin()</onclick>
 				</control>
-				<control type="button" id="2020">
+				<control type="radiobutton" id="2020">
 					<height>50</height>
 					<width>920</width>
 					<textoffsetx>20</textoffsetx>
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Toggle Bokeh 2</label>
+					<label>Add alternative Bokeh effect</label>
+					<selected>Skin.HasSetting(Bokeh2)</selected>
 					<onclick>Skin.ToggleSetting(Bokeh2)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
 				</control>
@@ -202,7 +200,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Toggle Rotating Bokeh</label>
+					<label>Use animation Bokeh Effect</label>
 					<selected>Skin.HasSetting(RotatingBokeh)</selected>
 					<onclick>Skin.ToggleSetting(RotatingBokeh)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
@@ -351,7 +349,6 @@
 					<onclick>Skin.ToggleSetting(ShowOtherApps)</onclick>
 					<selected>Skin.HasSetting(ShowOtherApps)</selected>
 				</control>
-
 			</control>
 		</control>
 	</controls>
