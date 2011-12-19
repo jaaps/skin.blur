@@ -45,6 +45,12 @@
 		</control>
 		<control type="button" id="9005">
 			<description>Poster view button</description>
+			<visible>Container.Content(plugins)</visible>
+			<label>Channel</label>
+			<onclick>Container.SetViewMode(58)</onclick>
+		</control>
+		<control type="button" id="9006">
+			<description>Poster view button</description>
 			<visible>Container.Content(episodes)</visible>
 			<label>Episode</label>
 			<onclick>Container.SetViewMode(59)</onclick>

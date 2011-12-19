@@ -1527,7 +1527,7 @@
 			<visible>!IsEmpty(ListItem.Thumb)</visible>
 			<width>324</width>
 			<height>488</height>
-			<aspectratio align="right" aligny="center">scale</aspectratio>
+			<aspectratio align="center" aligny="center">keep</aspectratio>
 			<info background="true">ListItem.Thumb</info>
 			<colordiffuse>FFFFFFFF</colordiffuse>
 			<align>left</align>
@@ -1972,9 +1972,7 @@
 	<include name="Poster">
 		<description>Poster View</description>
 		<control type="panel" id="55">
-			<viewtype label="Poster">panel</viewtype>
-			<visible>Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows)</visible>
-			<visible/>
+			<viewtype label="Poster">panel2</viewtype>
 			<onleft>9000</onleft>
 			<posx>40</posx>
 			<posy>100</posy>
@@ -1982,7 +1980,7 @@
 			<height>575</height>
 			<scrolltime>300</scrolltime>
 			<orientation>vertical</orientation>
-			<itemlayout height="202" width="140">
+			<itemlayout height="202" width="140" condition="Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows)">
 				<control type="image">
 					<posx>10</posx>
 					<posy>8</posy>
@@ -1993,7 +1991,7 @@
 					<fadetime>200</fadetime>
 				</control>
 			</itemlayout>
-			<focusedlayout height="202" width="140">
+			<focusedlayout height="202" width="140" condition="Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows)">
 				<control type="image">
 					<posx>7</posx>
 					<posy>0</posy>
@@ -2019,18 +2017,7 @@
 					</animation>
 				</control>
 			</focusedlayout>
-		</control>
-		<control type="panel" id="55">
-			<viewtype label="Poster">panel</viewtype>
-			<visible>![Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows) | Container.Content(secondary)]</visible>
-			<onleft>9000</onleft>
-			<posx>40</posx>
-			<posy>100</posy>
-			<width>760</width>
-			<height>575</height>
-			<scrolltime>300</scrolltime>
-			<orientation>vertical</orientation>
-			<itemlayout height="168" width="168">
+			<itemlayout height="168" width="168" condition="![Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows) | Container.Content(secondary)]">
 				<control type="group">
 					<animation effect="zoom" start="70" end="70" time="0" center="auto" condition="true">Conditional</animation>
 					<control type="image">
@@ -2045,7 +2032,7 @@
 					</control>
 				</control>
 			</itemlayout>
-			<focusedlayout height="168" width="168">
+			<focusedlayout height="168" width="168" condition="![Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows) | Container.Content(secondary)]">
 				<control type="group">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -2073,6 +2060,71 @@
 					</control>
 				</control>
 			</focusedlayout>
+		</control>
+		<control type="panel" id="58">
+			<viewtype label="Channel">panel</viewtype>
+			<onleft>9000</onleft>
+			<posx>20</posx>
+			<posy>80</posy>
+			<width>1280</width>
+			<height>550</height>
+			<scrolltime>300</scrolltime>
+			<orientation>vertical</orientation>
+			<itemlayout height="168" width="168" condition="![Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows) | Container.Content(secondary)]">
+				<control type="group">
+					<animation effect="zoom" start="70" end="70" time="0" center="auto" condition="true">Conditional</animation>
+					<control type="image">
+						<posy>10</posy>
+						<posx>10</posx>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<width>204</width>
+						<height>204</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<fadetime>400</fadetime>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout height="168" width="168" condition="![Container.Content(Movies) | Container.Content(seasons) | Container.Content(TVShows) | Container.Content(secondary)]">
+				<control type="group">
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>204</height>
+					<width>204</width>
+					<animation effect="zoom" start="40" end="100" time="120" center="94,94">Focus</animation>
+					<control type="image">
+						<posy>0</posy>
+						<posx>0</posx>
+						<width>204</width>
+						<height>204</height>
+						<aspectratio>scale</aspectratio>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<texture>thumb_square_background.png</texture>
+					</control>
+					<control type="image">
+						<posy>20</posy>
+						<posx>20</posx>
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<width>164</width>
+						<height>164</height>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Thumb]</texture>
+						<fadetime>400</fadetime>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="label">
+			<posx>50</posx>
+			<posy>655</posy>
+			<width>900</width>
+			<height>36</height>
+			<font>title1</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>White</textcolor>
+			<visible>Control.IsVisible(58)</visible>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 		</control>
 	</include>
 </includes>
