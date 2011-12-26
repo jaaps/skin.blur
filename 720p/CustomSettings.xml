@@ -323,22 +323,11 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Favorites button in Home-&gt;My Media</label>
-					<onclick>Skin.ToggleSetting(ShowFavorites)</onclick>
-					<selected>Skin.HasSetting(ShowFavorites)</selected>
-				</control>
-				<control type="radiobutton" id="2026">
-					<height>50</height>
-					<width>920</width>
-					<textoffsetx>20</textoffsetx>
-					<align>left</align>
-					<texturefocus>button.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
 					<label>Show Rating as text</label>
 					<onclick>Skin.ToggleSetting(AlternateRating)</onclick>
 					<selected>Skin.HasSetting(AlternateRating)</selected>
 				</control>
-				<control type="radiobutton" id="2027">
+				<control type="radiobutton" id="2026">
 					<height>50</height>
 					<width>920</width>
 					<textoffsetx>20</textoffsetx>

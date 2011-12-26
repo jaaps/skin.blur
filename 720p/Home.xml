@@ -490,14 +490,28 @@
 				<width>750</width>
 				<include>dialogHeading</include>
 				<label>&lt; Recently Added [COLOR=Gray]On Deck[/COLOR] &gt;</label>
-				<visible>Control.HasFocus(11000)</visible>
+				<visible>Control.HasFocus(11000) + Control.IsVisible(11000) + Control.IsVisible(11001)</visible>
 			</control>
 			<control type="label">
 				<posx>34</posx>
 				<width>750</width>
 				<include>dialogHeading</include>
 				<label>&lt; [COLOR=Gray]Recently Added[/COLOR] On Deck &gt;</label>
-				<visible>Control.HasFocus(11001)</visible>
+				<visible>Control.HasFocus(11001)  + Control.IsVisible(11000) + Control.IsVisible(11001)</visible>
+			</control>
+			<control type="label">
+				<posx>34</posx>
+				<width>750</width>
+				<include>dialogHeading</include>
+				<label>Recently Added</label>
+				<visible>Control.HasFocus(11000)  + Control.IsVisible(11000) + !Control.IsVisible(11001)</visible>
+			</control>
+			<control type="label">
+				<posx>34</posx>
+				<width>750</width>
+				<include>dialogHeading</include>
+				<label>On Deck</label>
+				<visible>Control.HasFocus(11001)  + !Control.IsVisible(11000) + Control.IsVisible(11001)</visible>
 			</control>
 			<control type="group">
 				<visible allowhiddenfocus="true">Control.HasFocus(11000)</visible>
@@ -541,13 +555,26 @@
 								<font>info1</font>
 								<scroll>false</scroll>
 								<aligny>center</aligny>
-								<textcolor>White</textcolor>
+								<textcolor>WhiteTrans</textcolor>
 							</control>
 							<control type="label">
 								<posx>80</posx>
 								<width>360</width>
 								<height>35</height>
 								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>WhiteTrans</textcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>ListItem.Type(album)</visible>
+							<control type="label">
+								<posx>20</posx>
+								<width>410</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Album] by $INFO[ListItem.Artist]</label>
 								<font>info1</font>
 								<scroll>false</scroll>
 								<aligny>center</aligny>
@@ -591,6 +618,19 @@
 								<width>360</width>
 								<height>35</height>
 								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>ListItem.Type(album)</visible>
+							<control type="label">
+								<posx>20</posx>
+								<width>410</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Album] [COLOR=WhiteTrans]by $INFO[ListItem.Artist][/COLOR]</label>
 								<font>info1</font>
 								<scroll>false</scroll>
 								<aligny>center</aligny>
@@ -642,13 +682,26 @@
 								<font>info1</font>
 								<scroll>false</scroll>
 								<aligny>center</aligny>
-								<textcolor>White</textcolor>
+								<textcolor>WhiteTrans</textcolor>
 							</control>
 							<control type="label">
 								<posx>80</posx>
 								<width>360</width>
 								<height>35</height>
 								<label>$INFO[ListItem.TVShowTitle]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>WhiteTrans</textcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>ListItem.Type(album)</visible>
+							<control type="label">
+								<posx>20</posx>
+								<width>410</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Album] by $INFO[ListItem.Artist]</label>
 								<font>info1</font>
 								<scroll>false</scroll>
 								<aligny>center</aligny>
@@ -698,8 +751,63 @@
 								<textcolor>White</textcolor>
 							</control>
 						</control>
+						<control type="group">
+							<visible>ListItem.Type(album)</visible>
+							<control type="label">
+								<posx>20</posx>
+								<width>410</width>
+								<height>35</height>
+								<label>$INFO[ListItem.Album] [COLOR=WhiteTrans]by $INFO[ListItem.Artist][/COLOR]</label>
+								<font>info1</font>
+								<scroll>false</scroll>
+								<aligny>center</aligny>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
 					</focusedlayout>
 				</control>
+			</control>
+			<control type="image">
+				<posy>85</posy>
+				<posx>460</posx>
+				<width>252</width>
+				<height>252</height>
+				<aspectratio>scale</aspectratio>
+				<visible>!IsEmpty(Container(11000).ListItem.Thumb)</visible>
+				<texture>thumb_square_background.png</texture>
+				<visible>Control.HasFocus(11000) + Container(11000).ListItem(0).Type(album)</visible>
+			</control>
+			<control type="image">
+				<posy>110</posy>
+				<posx>485</posx>
+				<visible>!IsEmpty(Container(11000).ListItem.Thumb)</visible>
+				<width>202</width>
+				<height>202</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true">$INFO[Container(11000).ListItem.Thumb]</texture>
+				<fadetime>400</fadetime>
+				<visible>Control.HasFocus(11000) + Container(11000).ListItem(0).Type(album)</visible>
+			</control>
+			<control type="image">
+				<posy>85</posy>
+				<posx>460</posx>
+				<width>252</width>
+				<height>252</height>
+				<aspectratio>scale</aspectratio>
+				<visible>!IsEmpty(Container(11001).ListItem.Thumb)</visible>
+				<texture>thumb_square_background.png</texture>
+				<visible>Control.HasFocus(11001) + Container(11001).ListItem(0).Type(album)</visible>
+			</control>
+			<control type="image">
+				<posy>110</posy>
+				<posx>485</posx>
+				<visible>!IsEmpty(Container(11001).ListItem.Thumb)</visible>
+				<width>202</width>
+				<height>202</height>
+				<aspectratio align="center" aligny="center">scale</aspectratio>
+				<texture background="true">$INFO[Container(11001).ListItem.Thumb]</texture>
+				<fadetime>400</fadetime>
+				<visible>Control.HasFocus(11001) + Container(11001).ListItem(0).Type(album)</visible>
 			</control>
 			<control type="image">
 				<posy>85</posy>

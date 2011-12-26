@@ -1514,7 +1514,7 @@
 		<control type="image">
 			<posy>100</posy>
 			<posx>800</posx>
-			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + [Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
 			<width>398</width>
 			<height>600</height>
 			<aspectratio>scale</aspectratio>
@@ -1522,12 +1522,35 @@
 			<visible>Control.IsVisible(50) + !Container.Content(secondary)</visible>
 		</control>
 		<control type="image">
+			<posy>200</posy>
+			<posx>800</posx>
+			<visible>!IsEmpty(ListItem.Thumb) + ![Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
+			<width>400</width>
+			<height>400</height>
+			<aspectratio>scale</aspectratio>
+			<texture>thumb_square_big_background.png</texture>
+			<visible>Control.IsVisible(50) + !Container.Content(secondary)</visible>
+		</control>
+		<control type="image">
 			<posy>156</posy>
 			<posx>837</posx>
-			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + [Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
 			<width>324</width>
 			<height>488</height>
-			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<aspectratio align="center" aligny="center">scale</aspectratio>
+			<info background="true">ListItem.Thumb</info>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<align>left</align>
+			<fadetime>400</fadetime>
+			<visible>Control.IsVisible(50) + !Container.Content(secondary)</visible>
+		</control>
+		<control type="image">
+			<posy>230</posy>
+			<posx>830</posx>
+			<visible>!IsEmpty(ListItem.Thumb) + ![Container.Content(movies) | Container.Content(seasons) | Container.Content(tvshows)]</visible>
+			<width>340</width>
+			<height>340</height>
+			<aspectratio align="center" aligny="center">scale</aspectratio>
 			<info background="true">ListItem.Thumb</info>
 			<colordiffuse>FFFFFFFF</colordiffuse>
 			<align>left</align>
