@@ -24,7 +24,7 @@
 					<width>670</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Property(sourceTitle)] &#xB7; $INFO[ListItem.Property(serverName)]</label>
+					<label>$INFO[ListItem.Title] on $INFO[ListItem.Property(serverName)] from $INFO[ListItem.Property(sourceTitle)]</label>
 					<textcolor>WhiteTrans</textcolor>
 					<scroll>false</scroll>
 					<font>list1</font>
@@ -46,7 +46,7 @@
 					<width>670</width>
 					<height>50</height>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Property(sourceTitle)] &#xB7; $INFO[ListItem.Property(serverName)]</label>
+					<label>$INFO[ListItem.Title] on $INFO[ListItem.Property(serverName)] from $INFO[ListItem.Property(sourceTitle)]</label>
 					<textcolor>White</textcolor>
 					<scroll>false</scroll>
 					<font>list1</font>
