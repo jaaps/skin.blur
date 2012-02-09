@@ -465,13 +465,18 @@
 					</item>
 					<item id="2">
 						<description>Sleep Button</description>
-						<label>Sleep</label>
-						<onclick>XBMC.SleepSystem()</onclick>
+						<label>Suspend System</label>
+						<onclick>Suspend</onclick>
 					</item>
 					<item id="3">
 						<description>Shut Down Button</description>
-						<label>Shutdown</label>
-						<onclick>XBMC.ShutDownSystem()</onclick>
+						<label>Shutdown System</label>
+						<onclick>Powerdown</onclick>
+					</item>
+					<item id="4">
+						<description>Reboot button</description>
+						<label>Reboot System</label>
+						<onclick>Reboot</onclick>
 					</item>
 				</content>
 			</control>

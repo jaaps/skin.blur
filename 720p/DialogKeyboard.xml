@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <window id="103">
-	<defaultcontrol always="true">310</defaultcontrol>
+	<defaultcontrol always="true">65</defaultcontrol>
 	<coordinates>
 		<posx>335</posx>
 		<posy>260</posy>
@@ -138,7 +138,7 @@
 					<posx>495</posx>
 					<onleft>56</onleft>
 					<onright>48</onright>
-					<onup>307</onup>
+					<onup>300</onup>
 					<ondown>80</ondown>
 					<include>keyboardButton</include>
 				</control>
@@ -215,7 +215,7 @@
 					<onleft>85</onleft>
 					<onright>79</onright>
 					<onup>55</onup>
-					<ondown>75</ondown>
+					<ondown>300</ondown>
 					<include>keyboardButton</include>
 				</control>
 				<control type="button" id="79">
@@ -318,7 +318,7 @@
 					<onleft>75</onleft>
 					<onright>65</onright>
 					<onup>79</onup>
-					<ondown>300</ondown>
+					<ondown>8</ondown>
 					<include>keyboardButton</include>
 				</control>
 			</control>
@@ -330,12 +330,12 @@
 					<description>SHIFT button</description>
 					<width>72</width>
 					<label>20178</label>
-					<onleft>300</onleft>
+					<onleft>8</onleft>
 					<onright>90</onright>
 					<onup>65</onup>
 					<ondown>305</ondown>
-					<alttexturenofocus border="8,8,8,8">dialogs/buttonKB-On.png</alttexturenofocus>
-					<alttexturefocus border="8,3,8,3">dialogs/buttonKB-On-Focus.png</alttexturefocus>
+					<alttexturenofocus border="8,8,8,8">dialogs/button_shift.png</alttexturenofocus>
+					<alttexturefocus border="8,3,8,3">dialogs/button_shift.png</alttexturefocus>
 					<include>keyboardButton</include>
 				</control>
 				<control type="button" id="90">
@@ -396,20 +396,21 @@
 					<description>'M' button</description>
 					<posx>409</posx>
 					<onleft>78</onleft>
-					<onright>300</onright>
+					<onright>8</onright>
 					<onup>75</onup>
 					<ondown>304</ondown>
 					<include>keyboardButton</include>
 				</control>
-				<control type="button" id="300">
-					<description>DONE button</description>
+				<control type="button" id="8">
+					<description>BACKSPACE button</description>
+					<label>Backspace</label>
 					<posx>464</posx>
 					<width>79</width>
 					<label>20177</label>
 					<onleft>77</onleft>
 					<onright>302</onright>
 					<onup>76</onup>
-					<ondown>307</ondown>
+					<ondown>300</ondown>
 					<include>keyboardButton</include>
 				</control>
 			</control>
@@ -421,7 +422,7 @@
 					<description>previous button</description>
 					<width>60</width>
 					<label>&lt;&lt;</label>
-					<onleft>307</onleft>
+					<onleft>300</onleft>
 					<onright>306</onright>
 					<onup>302</onup>
 					<ondown>48</ondown>
@@ -455,22 +456,23 @@
 					<width>72</width>
 					<label>?!#</label>
 					<onleft>32</onleft>
-					<onright>307</onright>
+					<onright>300</onright>
 					<onup>77</onup>
 					<ondown>55</ondown>
 					<alttexturenofocus border="3,14,27,3">button-nofocus-toggle-on.png</alttexturenofocus>
 					<alttexturefocus border="3,14,27,3">button-focus-toggle-on.png</alttexturefocus>
 					<include>keyboardButton</include>
 				</control>
-				<control type="button" id="307">
-					<description>'IP' button</description>
-					<posx>471</posx>
+				<control type="button" id="300">
+					<description>DONE button</description>
+					<label>Enter</label>
+					<posx>464</posx>
+					<width>79</width>
+					<label>20177</label>
 					<onleft>304</onleft>
 					<onright>305</onright>
-					<label>IP</label>
-					<onup>300</onup>
+					<onup>8</onup>
 					<ondown>57</ondown>
-					<width>72</width>
 					<include>keyboardButton</include>
 				</control>
 			</control>
