@@ -357,8 +357,8 @@
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<label>$LOCALIZE[31041]</label>
-					<onclick>Skin.HasSetting(ShowPlexOnlineSettings)</onclick>
-					<selected>Skin.ToggleSetting(ShowPlexOnlineSettings)</selected>
+					<onclick>Skin.ToggleSetting(ShowPlexOnlineSettings)</onclick>
+					<selected>Skin.HasSetting(ShowPlexOnlineSettings)</selected>
 				</control>
                 	<control type="label" id="2029">
 					<visible>!Skin.String(Custom_Background)</visible>
@@ -381,8 +381,8 @@
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<label>$LOCALIZE[31082]</label>
-					<onclick>Skin.HasSetting(ShowCloseButton)</onclick>
-					<selected>Skin.ToggleSetting(ShowCloseButton)</selected>
+					<onclick>Skin.ToggleSetting(ShowCloseButton)</onclick>
+					<selected>Skin.HasSetting(ShowCloseButton)</selected>
 				</control>
                     <control type="radiobutton" id="2031=">
 					<height>50</height>
@@ -392,9 +392,9 @@
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<label>$LOCALIZE[31083]</label>
-					<onclick>Skin.HasSetting(ShowSuspendButton)</onclick>
-					<selected>Skin.ToggleSetting(ShowSuspendButton)</selected>				
-                </control>
+					<onclick>Skin.ToggleSetting(ShowSuspendButton)</onclick>
+					<selected>Skin.HasSetting(ShowSuspendButton)</selected>
+				</control>
                     <control type="radiobutton" id="2032=">
 					<height>50</height>
 					<width>920</width>
@@ -403,8 +403,8 @@
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<label>$LOCALIZE[31084]</label>
-					<onclick>Skin.HasSetting(ShowRebootButton)</onclick>
-					<selected>Skin.ToggleSetting(ShowRebootButton)</selected>
+					<onclick>Skin.ToggleSetting(ShowRebootButton)</onclick>
+					<selected>Skin.HasSetting(ShowRebootButton)</selected>
 				</control>
                       <control type="radiobutton" id="2033=">
 					<height>50</height>
@@ -414,8 +414,8 @@
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<label>$LOCALIZE[31085]</label>
-					<onclick>Skin.HasSetting(ShowShutdownButton)</onclick>
-					<selected>Skin.ToggleSetting(ShowShutdownButton)</selected>
+					<onclick>Skin.ToggleSetting(ShowShutdownButton)</onclick>
+					<selected>Skin.HasSetting(ShowShutdownButton)</selected>
 				</control>
 			</control>
 		</control>
