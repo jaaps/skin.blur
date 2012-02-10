@@ -42,14 +42,14 @@
 				<posy>16</posy>
 				<width>366</width>
 				<align>center</align>
-				<label>Set Rating</label>
+				<label>$LOCALIZE[31048]</label>
 				<include>dialogLabel</include>
 			</control>
 			<control type="label" id="2">
 				<posy>40</posy>
 				<width>366</width>
 				<align>center</align>
-				<label>Set Rating</label>
+				<label>$LOCALIZE[31048]</label>
 				<include>dialogLabel</include>
 			</control>
 			<control type="image" id="10">

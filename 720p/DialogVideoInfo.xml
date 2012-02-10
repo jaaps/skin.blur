@@ -101,7 +101,7 @@
 							<align>left</align>
 							<aligny>bottom</aligny>
 							<textcolor>WhiteTrans</textcolor>
-							<label>Details</label>
+							<label>$LOCALIZE[31049]</label>
 						</control>
 						<control type="label">
 							<posx>206</posx>
@@ -110,7 +110,7 @@
 							<align>left</align>
 							<aligny>bottom</aligny>
 							<textcolor>WhiteTrans</textcolor>
-							<label>Starring</label>
+							<label>$LOCALIZE[31050]</label>
 						</control>
 						<control type="label">
 							<posy>72</posy>
@@ -120,7 +120,7 @@
 							<align>left</align>
 							<aligny>bottom</aligny>
 							<textcolor>WhiteTrans</textcolor>
-							<label>Director</label>
+							<label>$LOCALIZE[31051]</label>
 						</control>
 						<control type="label">
 							<posy>72</posy>
@@ -130,7 +130,7 @@
 							<align>left</align>
 							<aligny>bottom</aligny>
 							<textcolor>WhiteTrans</textcolor>
-							<label>Writer</label>
+							<label>$LOCALIZE[31052]</label>
 						</control>
 						<control type="grouplist">
 							<orientation>vertical</orientation>
@@ -152,7 +152,7 @@
 								<align>left</align>
 								<aligny>bottom</aligny>
 								<textcolor>White</textcolor>
-								<label>Released in $INFO[ListItem.Year]</label>
+								<label>$LOCALIZE[31053] $INFO[ListItem.Year]</label>
 								<wrapmultiline>false</wrapmultiline>
 							</control>
 							<control type="label">
@@ -162,7 +162,7 @@
 								<align>left</align>
 								<aligny>bottom</aligny>
 								<textcolor>White</textcolor>
-								<label>Length $INFO[ListItem.Duration]</label>
+								<label>$LOCALIZE[31054] $INFO[ListItem.Duration]</label>
 								<wrapmultiline>false</wrapmultiline>
 							</control>
 							<control type="label">
@@ -304,26 +304,26 @@
 				<orientation>vertical</orientation>
 				<control type="button" id="5">
 					<description>Cast</description>
-					<label>Cast</label>
+					<label>$LOCALIZE[31055]</label>
 					<visible>Container.Content(movies)</visible>
 				</control>
 				<!--
 				<control type="button" id="6">
 					<description>Refresh</description>
-					<label>Refresh</label>
+					<label>$LOCALIZE[31056]</label>
 				</control>
 				-->
 				<control type="button" id="12">
 					<description>Get Fanart</description>
-					<label>Get Fanart</label>
+					<label>$LOCALIZE[31057]</label>
 				</control>
 				<control type="button" id="10">
 					<description>Thumb</description>
-					<label>Get Thumb</label>
+					<label>$LOCALIZE[31058]</label>
 				</control>
 				<!--	<control type="button" id="11">
 					<description>Play Trailer</description>
-					<label>Trailer</label>
+					<label>$LOCALIZE[31059]</label>
 				</control>
 				-->
 			</control>

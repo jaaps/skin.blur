@@ -11,8 +11,8 @@
 			<texture>divider.png</texture>
 		</control>
 		<control type="label">
-			<description>First title</description>
-			<label>CUSTOM SETTINGS</label>
+			<description>Custom Settings</description>
+			<label>$LOCALIZE[31016]</label>
 			<posx>30</posx>
 			<posy>15</posy>
 			<width>1000</width>
@@ -36,12 +36,12 @@
 			<orientation>vertical</orientation>
 			<control type="button" id="1">
 				<description>Background</description>
-				<label>Background</label>
+				<label>$LOCALIZE[31017]</label>
 				<onclick>-</onclick>
 			</control>
 			<control type="button" id="2">
 				<description>Features</description>
-				<label>Features</label>
+				<label>$LOCALIZE[31018]</label>
 				<onclick>-</onclick>
 			</control>
 		</control>
@@ -65,7 +65,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Select a Custom Background</label>
+                    <label>$LOCALIZE[31019]</label>
 					<include>BackgroundReset</include>
 					<onclick>Skin.SetImage(Custom_Background)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
@@ -86,7 +86,7 @@
 				<control type="label" id="2013">
 					<visible>!Skin.String(Custom_Background)</visible>
 					<description>First title</description>
-					<label>Preset Backgrounds</label>
+					<label>$LOCALIZE[31020]</label>
 					<posx>30</posx>
 					<posy>15</posy>
 					<width>1000</width>
@@ -104,7 +104,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Dew Drop</label>
+					<label>$LOCALIZE[31021]</label>
 					<selected>!Skin.HasSetting(Background1)</selected>
 					<include>BackgroundReset</include>
 					<onclick>XBMC.ReloadSkin()</onclick>
@@ -118,7 +118,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Aurora</label>
+					<label>$LOCALIZE[31022]</label>
 					<selected>Skin.HasSetting(Background2)</selected>
 					<include>BackgroundReset</include>
 					<onclick>Skin.SetBool(Background1)</onclick>
@@ -134,7 +134,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Calm Water</label>
+					<label>$LOCALIZE[31023]</label>
 					<selected>Skin.HasSetting(Background3)</selected>
 					<include>BackgroundReset</include>
 					<onclick>Skin.SetBool(Background1)</onclick>
@@ -150,7 +150,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Dark Night</label>
+					<label>$LOCALIZE[31024]</label>
 					<selected>Skin.HasSetting(Background4)</selected>
 					<include>BackgroundReset</include>
 					<onclick>Skin.SetBool(Background1)</onclick>
@@ -159,7 +159,7 @@
 				</control>
 				<control type="label" id="2018">
 					<description>First title</description>
-					<label>Bokeh Settings</label>
+					<label>$LOCALIZE[31025]</label>
 					<posx>30</posx>
 					<posy>15</posy>
 					<width>1000</width>
@@ -176,7 +176,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Add Bokeh effect</label>
+					<label>$LOCALIZE[31026]</label>
 					<onclick>Skin.ToggleSetting(Bokeh1)</onclick>
 					<selected>Skin.HasSetting(Bokeh1)</selected>
 					<onclick>XBMC.ReloadSkin()</onclick>
@@ -188,7 +188,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Add alternative Bokeh effect</label>
+					<label>$LOCALIZE[31027]</label>
 					<selected>Skin.HasSetting(Bokeh2)</selected>
 					<onclick>Skin.ToggleSetting(Bokeh2)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
@@ -200,7 +200,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Use animation Bokeh Effect</label>
+					<label>$LOCALIZE[31028]</label>
 					<selected>Skin.HasSetting(RotatingBokeh)</selected>
 					<onclick>Skin.ToggleSetting(RotatingBokeh)</onclick>
 					<onclick>XBMC.ReloadSkin()</onclick>
@@ -224,7 +224,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Hide Tips in Home</label>
+					<label>$LOCALIZE[31029]</label>
 					<selected>Skin.HasSetting(HideHomeTips)</selected>
 					<onclick>Skin.ToggleSetting(HideHomeTips)</onclick>
 				</control>
@@ -235,7 +235,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Enable fanart slideshow in Home</label>
+					<label>$LOCALIZE[31030]</label>
 					<selected>Skin.HasSetting(FanartSlideshow)</selected>
 					<onclick>Skin.ToggleSetting(FanartSlideshow)</onclick>
 				</control>
@@ -246,7 +246,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Plex Logo in Home</label>
+					<label>$LOCALIZE[31031]</label>
 					<selected>Skin.HasSetting(ShowPlexLogo)</selected>
 					<onclick>Skin.ToggleSetting(ShowPlexLogo)</onclick>
 				</control>
@@ -257,7 +257,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Fanart</label>
+					<label>$LOCALIZE[31032]</label>
 					<selected>Skin.HasSetting(Fanart)</selected>
 					<onclick>Skin.ToggleSetting(Fanart)</onclick>
 				</control>
@@ -268,7 +268,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show HD Icon</label>
+					<label>$LOCALIZE[31033]</label>
 					<onclick>Skin.ToggleSetting(Flags)</onclick>
 					<selected>Skin.HasSetting(Flags)</selected>
 				</control>
@@ -279,7 +279,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show MPAA Rating while browsing movies</label>
+					<label>$LOCALIZE[31034]</label>
 					<onclick>Skin.ToggleSetting(ShowMPAA)</onclick>
 					<selected>Skin.HasSetting(ShowMPAA)</selected>
 				</control>
@@ -290,7 +290,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Hide Unwatched flags</label>
+					<label>$LOCALIZE[31035]</label>
 					<onclick>Skin.ToggleSetting(NoWatchedFlags)</onclick>
 					<selected>Skin.HasSetting(NoWatchedFlags)</selected>
 				</control>
@@ -301,7 +301,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show "Finished at" on OSD</label>
+					<label>$LOCALIZE[31036]</label>
 					<onclick>Skin.ToggleSetting(FinishTime)</onclick>
 					<selected>Skin.HasSetting(FinishTime)</selected>
 				</control>
@@ -312,7 +312,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show current time on OSD</label>
+					<label>$LOCALIZE[31037]</label>
 					<onclick>Skin.ToggleSetting(ShowTimeOSD)</onclick>
 					<selected>Skin.HasSetting(ShowTimeOSD)</selected>
 				</control>
@@ -323,7 +323,7 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Rating as text</label>
+					<label>$LOCALIZE[31038]</label>
 					<onclick>Skin.ToggleSetting(AlternateRating)</onclick>
 					<selected>Skin.HasSetting(AlternateRating)</selected>
 				</control>
@@ -334,9 +334,88 @@
 					<align>left</align>
 					<texturefocus>button.png</texturefocus>
 					<texturenofocus>-</texturenofocus>
-					<label>Show Other Channels in Home-&gt;Apps</label>
+					<label>$LOCALIZE[31039]</label>
 					<onclick>Skin.ToggleSetting(ShowOtherApps)</onclick>
 					<selected>Skin.HasSetting(ShowOtherApps)</selected>
+				</control>
+                		<control type="radiobutton" id="2027">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31040]</label>
+					<onclick>Skin.ToggleSetting(ShowPlexOnline)</onclick>
+					<selected>Skin.HasSetting(ShowPlexOnline)</selected>
+				</control>
+                	<control type="radiobutton" id="2028">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31041]</label>
+					<onclick>Skin.ToggleSetting(ShowPlexOnlineSettings)</onclick>
+					<selected>Skin.HasSetting(ShowPlexOnlineSettings)</selected>
+				</control>
+                	<control type="label" id="2029">
+					<visible>!Skin.String(Custom_Background)</visible>
+					<description>First title</description>
+					<label>$LOCALIZE[31081]</label>
+					<posx>30</posx>
+					<posy>15</posy>
+					<width>1000</width>
+					<height>56</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>info1</font>
+					<textcolor>White</textcolor>
+				</control>
+                    <control type="radiobutton" id="2030=">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31082]</label>
+					<onclick>Skin.ToggleSetting(ShowCloseButton)</onclick>
+					<selected>Skin.HasSetting(ShowCloseButton)</selected>
+				</control>
+                    <control type="radiobutton" id="2031=">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31083]</label>
+					<onclick>Skin.ToggleSetting(ShowSuspendButton)</onclick>
+					<selected>Skin.HasSetting(ShowSuspendButton)</selected>
+				</control>
+                    <control type="radiobutton" id="2032=">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31084]</label>
+					<onclick>Skin.ToggleSetting(ShowRebootButton)</onclick>
+					<selected>Skin.HasSetting(ShowRebootButton)</selected>
+				</control>
+                      <control type="radiobutton" id="2033=">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31085]</label>
+					<onclick>Skin.ToggleSetting(ShowShutdownButton)</onclick>
+					<selected>Skin.HasSetting(ShowShutdownButton)</selected>
 				</control>
 			</control>
 		</control>

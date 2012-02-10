@@ -68,10 +68,10 @@
 					<onclick>XBMC.PlayerControl(ShowVideoMenu)</onclick>
 					<visible>VideoPlayer.HasMenu</visible>
 				</control>
-				<control type="button" id="10">
+				<!--<control type="button" id="10">
 					<texturefocus>-</texturefocus>
 					<onclick>XBMC.ActivateWindow(125)</onclick>
-				</control>
+				</control>-->
 				<control type="button" id="11">
 					<texturefocus>-</texturefocus>
 					<onclick>XBMC.PlayerControl(Previous)</onclick>
@@ -201,7 +201,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>PAUSED</label>
+				<label>$LOCALIZE[31069]</label>
 				<visible>Player.Paused</visible>
 			</control>
 			<control type="label">
@@ -213,7 +213,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>RWD 2X</label>
+				<label>$LOCALIZE[31070]</label>
 				<visible>Player.Rewinding2x</visible>
 			</control>
 			<control type="label">
@@ -225,7 +225,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>RWD 4X</label>
+				<label>$LOCALIZE[31071]</label>
 				<visible>Player.Rewinding4x</visible>
 			</control>
 			<control type="label">
@@ -237,7 +237,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>RWD 8X</label>
+				<label>$LOCALIZE[31072]</label>
 				<visible>Player.Rewinding8x</visible>
 			</control>
 			<control type="label">
@@ -249,7 +249,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>RWD 16X</label>
+				<label>$LOCALIZE[31073]</label>
 				<visible>Player.Rewinding16x</visible>
 			</control>
 			<control type="label">
@@ -261,7 +261,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>RWD 32X</label>
+				<label>$LOCALIZE[31074]</label>
 				<visible>Player.Rewinding32x</visible>
 			</control>
 			<control type="label">
@@ -273,7 +273,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>FWD 2X</label>
+				<label>$LOCALIZE[31075]</label>
 				<visible>Player.Forwarding2x</visible>
 			</control>
 			<control type="label">
@@ -285,7 +285,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>FWD 4X</label>
+				<label>$LOCALIZE[31076]</label>
 				<visible>Player.Forwarding4x</visible>
 			</control>
 			<control type="label">
@@ -297,7 +297,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>FWD 8X</label>
+				<label>$LOCALIZE[31077]</label>
 				<visible>Player.Forwarding8x</visible>
 			</control>
 			<control type="label">
@@ -309,7 +309,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>FWD 16X</label>
+				<label>$LOCALIZE[31078]</label>
 				<visible>Player.Forwarding16x</visible>
 			</control>
 			<control type="label">
@@ -321,7 +321,7 @@
 				<align>center</align>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>FWD 32X</label>
+				<label>$LOCALIZE[31079]</label>
 				<visible>Player.Forwarding32x</visible>
 			</control>
 			<control type="label">
@@ -341,7 +341,7 @@
 				<font>list2</font>
 				<align>center</align>
 				<colordiffuse>d0FFFFFF</colordiffuse>
-				<label>finished at $INFO[Player.FinishTime]</label>
+				<label>$LOCALIZE[31080] $INFO[Player.FinishTime]</label>
 				<visible>Skin.HasSetting(FinishTime)</visible>
 			</control>
 			<control type="label">

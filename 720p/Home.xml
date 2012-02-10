@@ -91,23 +91,23 @@
 			<content>
 				<item id="1">
 					<description>Media</description>
-					<label>Media</label>
+					<label>$LOCALIZE[31000]</label>
 					<onclick>SetFocus(300,0)</onclick>
 					<thumb>icons/icon_pictures.png</thumb>
 				</item>
 				<item id="2">
 					<description>Channels</description>
-					<label>Channels</label>
+					<label>$LOCALIZE[31001]</label>
 					<onclick>SetFocus(400,0)</onclick>
 				</item>
 				<item id="3">
 					<description>Settings</description>
-					<label>$LOCALIZE[5]</label>
+					<label>$LOCALIZE[31002]</label>
 					<onclick>SetFocus(500,0)</onclick>
 				</item>
 				<item id="4">
 					<description>Exit</description>
-					<label>Exit</label>
+					<label>$LOCALIZE[31003]</label>
 					<onclick>SetFocus(600,0)</onclick>
 				</item>
 			</content>
@@ -297,29 +297,30 @@
 				<content>
 					<item id="1">
 						<description>Video Channels</description>
-						<label>Video Channels</label>
+						<label>$LOCALIZE[31004]</label>
 						<onclick>xbmc.activatewindow(6)</onclick>
 					</item>
 					<item id="2">
 						<description>Audio Channels</description>
-						<label>Audio Channels</label>
+						<label>$LOCALIZE[31005]</label>
 						<onclick>xbmc.activatewindow(5)</onclick>
 					</item>
 					<item id="3">
 						<description>Picture Channels</description>
-						<label>Picture Channels</label>
+						<label>$LOCALIZE[31006]</label>
 						<onclick>xbmc.activatewindow(2)</onclick>
 					</item>
 					<item id="4">
 						<description>Other Channels</description>
-						<label>Other Channels</label>
+						<label>$LOCALIZE[31007]</label>
 						<onclick>xbmc.activatewindow(1)</onclick>
 						<visible>Skin.HasSetting(ShowOtherApps)</visible>
 					</item>
 					<item id="5">
 						<description>Plex Connect</description>
-						<label>Channel Directory</label>
+						<label>$LOCALIZE[31008]</label>
 						<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/plexonline,return)</onclick>
+                        <visible>Skin.HasSetting(ShowPlexOnline)</visible>
 					</item>
 				</content>
 			</control>
@@ -384,17 +385,16 @@
 						<label>$LOCALIZE[1]</label>
 						<onclick>activatewindow(MyPicturesSettings)</onclick>
 					</item>
-					<item id="6">
+						<!--	<item id="6">
 						<description>Weather</description>
 						<label>$LOCALIZE[8]</label>
 						<onclick>activatewindow(MyWeatherSettings)</onclick>
 					</item>
-					<!--					<item id="7">
+									<item id="7">
 						<description>Network</description>
 						<label>$LOCALIZE[705]</label>
 						<onclick>activatewindow(NetworkSettings)</onclick>
-					</item>
-					-->
+					</item>-->
 					<item id="8">
 						<description>System</description>
 						<label>$LOCALIZE[13000]</label>
@@ -409,6 +409,12 @@
 						<description>Custom Settings</description>
 						<label>Blur</label>
 						<onclick>activatewindow(56)</onclick>
+					</item>
+                    	<item id="14">
+						<description>Plex Connect</description>
+						<label>$LOCALIZE[31008]</label>
+						<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/plexonline,return)</onclick>
+                        <visible>Skin.HasSetting(ShowPlexOnlineSettings)</visible>
 					</item>
 				</content>
 			</control>
@@ -460,23 +466,27 @@
 				<content>
 					<item id="1">
 						<description>Quit Button</description>
-						<label>Exit Plex</label>
+						<label>$LOCALIZE[31009]</label>
 						<onclick>Plex.Shutdown()</onclick>
+                        <visible>Skin.HasSetting(ShowCloseButton)</visible>
 					</item>
 					<item id="2">
 						<description>Sleep Button</description>
-						<label>Suspend System</label>
+						<label>$LOCALIZE[31010]</label>
 						<onclick>Suspend</onclick>
+                        <visible>Skin.HasSetting(ShowSuspendButton)</visible>
 					</item>
-					<item id="3">
-						<description>Shut Down Button</description>
-						<label>Shutdown System</label>
-						<onclick>Powerdown</onclick>
+                    		<item id="3">
+						<description>Reboot Button</description>
+						<label>$LOCALIZE[31011]</label>
+						<onclick>Reboot</onclick>
+                        <visible>Skin.HasSetting(ShowRebootButton)</visible>
 					</item>
 					<item id="4">
-						<description>Reboot button</description>
-						<label>Reboot System</label>
-						<onclick>Reboot</onclick>
+						<description>Shut Down Button</description>
+						<label>$LOCALIZE[31012]</label>
+						<onclick>Powerdown</onclick>
+                        <visible>Skin.HasSetting(ShowShutdownButton)</visible>
 					</item>
 				</content>
 			</control>
@@ -494,28 +504,28 @@
 				<posx>34</posx>
 				<width>750</width>
 				<include>dialogHeading</include>
-				<label>&lt; Recently Added [COLOR=Gray]On Deck[/COLOR] &gt;</label>
+				<label>&lt; $LOCALIZE[31013] [COLOR=Gray]$LOCALIZE[31014][/COLOR] &gt;</label>
 				<visible>Control.HasFocus(11000) + Control.IsVisible(11000) + Control.IsVisible(11001)</visible>
 			</control>
 			<control type="label">
 				<posx>34</posx>
 				<width>750</width>
 				<include>dialogHeading</include>
-				<label>&lt; [COLOR=Gray]Recently Added[/COLOR] On Deck &gt;</label>
+				<label>&lt; [COLOR=Gray]$LOCALIZE[31013][/COLOR] $LOCALIZE[31014] &gt;</label>
 				<visible>Control.HasFocus(11001)  + Control.IsVisible(11000) + Control.IsVisible(11001)</visible>
 			</control>
 			<control type="label">
 				<posx>34</posx>
 				<width>750</width>
 				<include>dialogHeading</include>
-				<label>Recently Added</label>
+				<label>$LOCALIZE[31013]</label>
 				<visible>Control.HasFocus(11000)  + Control.IsVisible(11000) + !Control.IsVisible(11001)</visible>
 			</control>
 			<control type="label">
 				<posx>34</posx>
 				<width>750</width>
 				<include>dialogHeading</include>
-				<label>On Deck</label>
+				<label>$LOCALIZE[31014]</label>
 				<visible>Control.HasFocus(11001)  + !Control.IsVisible(11000) + Control.IsVisible(11001)</visible>
 			</control>
 			<control type="group">
@@ -906,7 +916,7 @@
 			<height>50</height>
 			<aligny>top</aligny>
 			<align>center</align>
-			<label>Tip: Press right to show On Deck or Recently Added</label>
+			<label>$LOCALIZE[31015]</label>
 			<textcolor>White</textcolor>
 			<scroll>false</scroll>
 			<font>info1</font>
@@ -920,7 +930,7 @@
 			<height>50</height>
 			<aligny>top</aligny>
 			<align>center</align>
-			<label>Tip: Press MENU or BACKSPACE to close this dialog</label>
+			<label></label>
 			<textcolor>White</textcolor>
 			<scroll>false</scroll>
 			<font>info1</font>

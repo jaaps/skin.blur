@@ -22,37 +22,37 @@
 	<include name="SideMenuViews">
 		<control type="button" id="9001">
 			<description>List view button</description>
-			<label>List</label>
+			<label>$LOCALIZE[31060]</label>
 			<onclick>Container.SetViewMode(50)</onclick>
 		</control>
 		<control type="button" id="9002">
 			<description>Info List view button</description>
 			<visible>!Container.Content(secondary)</visible>
-			<label>Info List</label>
+			<label>$LOCALIZE[31061]</label>
 			<onclick>Container.SetViewMode(51)</onclick>
 		</control>
 		<control type="button" id="9003">
 			<description>Horizon view button</description>
 			<visible>[Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)] + !Window.IsVisible(28) + !Window.IsVisible(500)</visible>
-			<label>Horizon</label>
+			<label>$LOCALIZE[31062]</label>
 			<onclick>Container.SetViewMode(56)</onclick>
 		</control>
 		<control type="button" id="9004">
 			<description>Poster view button</description>
 			<visible>!Container.Content(episodes) + !Container.Content(Pictures) + !Container.Content(albums) + !Container.Content(songs) + !Container.Content(artists) + !Container.Content(secondary) + !Window.IsVisible(28) + !Window.IsVisible(500)</visible>
-			<label>Panel</label>
+			<label>$LOCALIZE[31063]</label>
 			<onclick>Container.SetViewMode(55)</onclick>
 		</control>
 		<control type="button" id="9005">
 			<description>Poster view button</description>
 			<visible>Container.Content(plugins)</visible>
-			<label>Channel</label>
+			<label>$LOCALIZE[31064]</label>
 			<onclick>Container.SetViewMode(58)</onclick>
 		</control>
 		<control type="button" id="9006">
 			<description>Poster view button</description>
 			<visible>Container.Content(episodes)</visible>
-			<label>Episode</label>
+			<label>$LOCALIZE[31065]</label>
 			<onclick>Container.SetViewMode(59)</onclick>
 		</control>
 	</include>
@@ -387,7 +387,7 @@
 		<control type="label">
 			<description>First title</description>
 			<visible>IsEmpty(Container.FirstTitle) + !Container.Scrolling</visible>
-			<label>[UPPERCASE]Playlist[/UPPERCASE]</label>
+			<label>[UPPERCASE]$LOCALIZE[31066][/UPPERCASE]</label>
 			<posx>30</posx>
 			<posy>15</posy>
 			<width>1000</width>
@@ -414,7 +414,7 @@
 	<include name="HeaderHome">
 		<control type="label">
 			<description>First title</description>
-			<label>[UPPERCASE]Welcome to Plex[/UPPERCASE]</label>
+			<label>[UPPERCASE]$LOCALIZE[31067][/UPPERCASE]</label>
 			<posx>30</posx>
 			<posy>15</posy>
 			<width>1000</width>
@@ -443,7 +443,7 @@
 	</include>
 	<include name="HeaderWeather">
 		<control type="label">
-			<label>Weather</label>
+			<label>$LOCALIZE[31068]</label>
 			<posx>30</posx>
 			<posy>15</posy>
 			<width>1000</width>

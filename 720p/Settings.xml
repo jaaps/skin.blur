@@ -30,12 +30,12 @@
 				<description>Pictures</description>
 				<label>$LOCALIZE[1]</label>
 				<onclick>activatewindow(MyPicturesSettings)</onclick>
-			</control>
-			<control type="button" id="6">
+			</control><!--
+			 <control type="button" id="6">
 				<description>Weather</description>
 				<label>$LOCALIZE[8]</label>
-				<onclick>activatewindow(MyWeatherSettings)</onclick>
-			</control>
+				<onclick>activatewindow(MyWeatherSettings)</onclick> 
+			</control>-->
 			<control type="button" id="7">
 				<description>Network</description>
 				<label>$LOCALIZE[705]</label>
@@ -56,6 +56,12 @@
 				<label>$LOCALIZE[636]</label>
 				<onclick>activatewindow(56)</onclick>
 			</control>
+            	<control type="button" id="14">
+						<description>Plex Connect</description>
+						<label>$LOCALIZE[31008]</label>
+						<onclick>Plex.ActivateWindow(1,plex://127.0.0.1/system/plexonline,return)</onclick>
+                        <visible>Skin.HasSetting(ShowPlexOnlineSettings)</visible>
+					</control>
 		</control>
 	</controls>
 </window>

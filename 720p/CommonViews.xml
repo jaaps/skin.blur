@@ -75,7 +75,7 @@
 				<height>20</height>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>[COLOR=WhiteTrans]Rating[/COLOR] $INFO[ListItem.Rating]</label>
+				<label>[COLOR=WhiteTrans]$LOCALIZE[31042][/COLOR] $INFO[ListItem.Rating]</label>
 			</control>
 			<control type="image">
 				<posy>3</posy>
@@ -94,7 +94,7 @@
 					<height>345</height>
 					<orientation>vertical</orientation>
 					<control type="textbox">
-						<description>Plot/Details</description>
+						<description>$LOCALIZE[31043]</description>
 						<width>370</width>
 						<height>585</height>
 						<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -114,7 +114,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-345</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -135,7 +135,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-355</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -156,7 +156,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-365</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -177,7 +177,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-375</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -198,7 +198,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-385</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -219,7 +219,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-395</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -240,7 +240,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-405</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -261,7 +261,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-415</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -282,7 +282,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-425</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=Trans]$INFO[ListItem.FirstGenre] from $INFO[ListItem.Year][/COLOR][CR][COLOR=Trans]$INFO[ListItem.Property(UnWatchedEpisodes)] unwatched episodes[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
@@ -375,7 +375,7 @@
 				<align>left</align>
 				<aligny>top</aligny>
 				<textcolor>WhiteTrans</textcolor>
-				<label>[UPPERCASE]SEASON [COLOR=White]$INFO[ListItem.Season][/COLOR] EPISODE [COLOR=White]$INFO[ListItem.Episode][/COLOR][/UPPERCASE]</label>
+				<label>[UPPERCASE]$LOCALIZE[31044] [COLOR=White]$INFO[ListItem.Season][/COLOR] $LOCALIZE[31045] [COLOR=White]$INFO[ListItem.Episode][/COLOR][/UPPERCASE]</label>
 			</control>
 			<control type="label">
 				<posy>3</posy>
@@ -385,7 +385,7 @@
 				<height>20</height>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>[COLOR=WhiteTrans]Rating[/COLOR] $INFO[ListItem.Rating]</label>
+				<label>[COLOR=WhiteTrans]$LOCALIZE[31042][/COLOR] $INFO[ListItem.Rating]</label>
 			</control>
 			<control type="image">
 				<posy>3</posy>
@@ -404,10 +404,10 @@
 					<height>345</height>
 					<orientation>vertical</orientation>
 					<control type="textbox">
-						<description>Plot/Details</description>
+						<description>$LOCALIZE[31043]</description>
 						<width>370</width>
 						<height>585</height>
-						<label>[COLOR=WhiteTrans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+						<label>[COLOR=WhiteTrans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 						<textcolor>White</textcolor>
 						<font>plot1</font>
 						<autoscroll>false</autoscroll>
@@ -424,10 +424,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-345</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade1</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -445,10 +445,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-355</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade2</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -466,10 +466,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-365</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade3</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -487,10 +487,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-375</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade4</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -508,10 +508,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-385</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade5</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -529,10 +529,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-395</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade6</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -550,10 +550,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-405</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade7</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -571,10 +571,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-415</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] $LOCALIZE[31047][/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade8</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -592,10 +592,10 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-425</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
-							<label>[COLOR=Trans]Aired on $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
+							<label>[COLOR=Trans]$LOCALIZE[31046] $INFO[ListItem.date][CR]$INFO[ListItem.Duration] duration[/COLOR][CR][CR]$INFO[ListItem.Plot]</label>
 							<textcolor>WhiteFade9</textcolor>
 							<font>plot1</font>
 							<autoscroll>false</autoscroll>
@@ -604,7 +604,7 @@
 				</control>
 			</control>
 			<control type="textbox">
-				<description>Plot/Details</description>
+				<description>$LOCALIZE[31043]</description>
 				<width>340</width>
 				<height>200</height>
 				<info>ListItem.Plot</info>
@@ -675,7 +675,7 @@
 				<aspectratio aligny="center" align="left">keep</aspectratio>
 			</control>
 			<control type="textbox">
-				<description>Plot/Details</description>
+				<description>$LOCALIZE[31043]</description>
 				<width>340</width>
 				<height>200</height>
 				<info>ListItem.Plot</info>
@@ -757,7 +757,7 @@
 				<label>$INFO[ListItem.Year]</label>
 			</control>
 			<control type="textbox">
-				<description>Plot/Details</description>
+				<description>$LOCALIZE[31043]</description>
 				<width>340</width>
 				<height>200</height>
 				<info>ListItem.Plot</info>
@@ -797,7 +797,7 @@
 				<height>20</height>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>[COLOR=WhiteTrans]Rating[/COLOR] $INFO[ListItem.Rating]</label>
+				<label>[COLOR=WhiteTrans]$LOCALIZE[31042][/COLOR] $INFO[ListItem.Rating]</label>
 			</control>
 			<control type="image">
 				<posy>3</posy>
@@ -822,7 +822,7 @@
 				<visible>!IsEmpty(ListItem.Label2)</visible>
 			</control>
 			<control type="textbox">
-				<description>Plot/Details</description>
+				<description>$LOCALIZE[31043]</description>
 				<width>340</width>
 				<height>200</height>
 				<info>ListItem.Plot</info>
@@ -862,7 +862,7 @@
 				<height>30</height>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>[COLOR=WhiteTrans]Rating[/COLOR] $INFO[ListItem.Rating]</label>
+				<label>[COLOR=WhiteTrans]$LOCALIZE[31042][/COLOR] $INFO[ListItem.Rating]</label>
 			</control>
 			<control type="image">
 				<posy>3</posy>
@@ -881,7 +881,7 @@
 					<height>345</height>
 					<orientation>vertical</orientation>
 					<control type="textbox">
-						<description>Plot/Details</description>
+						<description>$LOCALIZE[31043]</description>
 						<width>370</width>
 						<height>585</height>
 						<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -901,7 +901,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-345</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -922,7 +922,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-355</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -943,7 +943,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-365</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -964,7 +964,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-375</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -985,7 +985,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-385</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -1006,7 +1006,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-395</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -1027,7 +1027,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-405</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -1048,7 +1048,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-415</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -1069,7 +1069,7 @@
 						<width>370</width>
 						<control type="textbox">
 							<posy>-425</posy>
-							<description>Plot/Details</description>
+							<description>$LOCALIZE[31043]</description>
 							<width>370</width>
 							<height>670</height>
 							<label>[COLOR=WhiteTrans]$INFO[ListItem.FirstGenre,, - ]$INFO[ListItem.Year,, - ]$INFO[ListItem.Duration,,][/COLOR][CR][COLOR=WhiteTrans]$INFO[ListItem.Cast,Starring ,[CR]][/COLOR][CR]$INFO[ListItem.Plot]</label>
@@ -1110,7 +1110,7 @@
 				<height>30</height>
 				<font>info1</font>
 				<textcolor>White</textcolor>
-				<label>[COLOR=WhiteTrans]Rating[/COLOR] $INFO[ListItem.Rating]</label>
+				<label>[COLOR=WhiteTrans]$LOCALIZE[31042][/COLOR] $INFO[ListItem.Rating]</label>
 			</control>
 			<control type="image">
 				<posy>3</posy>

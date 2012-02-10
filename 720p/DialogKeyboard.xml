@@ -402,8 +402,8 @@
 					<include>keyboardButton</include>
 				</control>
 				<control type="button" id="8">
-					<description>BACKSPACE button</description>
-					<label>Backspace</label>
+			<description>BACKSPACE button</description>
+                    <label>Backspace</label>
 					<posx>464</posx>
 					<width>79</width>
 					<label>20177</label>
@@ -463,9 +463,9 @@
 					<alttexturefocus border="3,14,27,3">button-focus-toggle-on.png</alttexturefocus>
 					<include>keyboardButton</include>
 				</control>
-				<control type="button" id="300">
+						<control type="button" id="300">
 					<description>DONE button</description>
-					<label>Enter</label>
+                    <label>Enter</label>
 					<posx>464</posx>
 					<width>79</width>
 					<label>20177</label>
