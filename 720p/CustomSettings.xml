@@ -360,9 +360,20 @@
 					<onclick>Skin.ToggleSetting(ShowPlexOnlineSettings)</onclick>
 					<selected>Skin.HasSetting(ShowPlexOnlineSettings)</selected>
 				</control>
+                <control type="radiobutton" id="2034=">
+					<height>50</height>
+					<width>920</width>
+					<textoffsetx>20</textoffsetx>
+					<align>left</align>
+					<texturefocus>button.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<label>$LOCALIZE[31086]</label>
+					<onclick>Skin.ToggleSetting(ShowSearchMenu)</onclick>
+					<selected>Skin.HasSetting(ShowSearchMenu)</selected>
+				</control>
                 	<control type="label" id="2029">
-					<visible>!Skin.String(Custom_Background)</visible>
-					<description>First title</description>
+					<visible>true</visible>
+					<description>Shutdown</description>
 					<label>$LOCALIZE[31081]</label>
 					<posx>30</posx>
 					<posy>15</posy>

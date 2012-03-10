@@ -100,4 +100,10 @@
     <string id="31083">Toon "Systeem sluimeren"</string>
     <string id="31084">Toon "Systeem herstarten"</string>
     <string id="31085">Toon "Systeem afsluiten"</string>
-    </strings>
+<!--  Search Menu -->
+    <string id="31086">Activeer zoekmenu (BETA!)</string>
+    <string id="31087">Zoeken</string>   
+    <string id="31088">Films</string>
+    <string id="31089">Afleveringen</string>
+    <string id="31090">Acteurs</string>
+</strings>

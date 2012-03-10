@@ -183,9 +183,9 @@
 					</item>
 					<item id="7">
 						<description>Search Menu</description>
-						<label> Search </label>
+						<label>$LOCALIZE[31087]</label>
 						<onclick>Plex.ActivateWindow(10051)</onclick>
-						<visible>false</visible>
+						<visible>Skin.HasSetting(ShowSearchMenu)</visible>
 					</item>
 					<item id="111">
 						<description>Quit Button</description>

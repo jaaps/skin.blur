@@ -94,10 +94,20 @@
     <string id="31079">FWD 32X</string>
     <string id="31080">finished at</string>
 <!-- Custom Settings 2 -->
-<!--  Exit Menu -->
+    <!--  Exit Menu -->
     <string id="31081">Exit Menu</string>
     <string id="31082">Show "Close Plex"</string>
     <string id="31083">Show "Suspend System"</string>
     <string id="31084">Show "Shutdown System"</string>
     <string id="31085">Show "Reboot System"</string>
+<!--  Search Menu -->
+    <string id="31086">Activate Search Menu (BETA!)</string>    
+    <string id="31087">Search</string>    
+    <string id="31088">Movies</string>
+    <string id="31089">Episodes</string>
+    <string id="31090">Actors</string>
+
+
+
+
 </strings>

@@ -662,3 +662,16 @@
 		<pulseonselect>false</pulseonselect>
 	</include>
 </includes>
+<include name="Background_Search">
+    <control type="group">
+        <control type="image">
+            <description>Background Image</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>plex-search-background.png</texture>
+        </control>
+    </control>
+</include>

@@ -100,4 +100,7 @@
     <string id="31083">Show "Suspend System"</string>
     <string id="31084">Show "Shutdown System"</string>
     <string id="31085">Show "Reboot System"</string>
+    <string id="31086">Activate Search Menu (BETA!)</string>    
+    <string id="31087">Search</string>
+
 </strings>
